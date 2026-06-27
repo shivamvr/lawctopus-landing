@@ -1,4 +1,4 @@
-export function LawctopusGavel({ size = 44, color = 'var(--c-forest)' }) {
+export function LawctopusGavel({ size = 44, color = 'var(--c-accent)' }) {
   const w = Math.round(size * 0.78)
   return (
     <svg width={w} height={size} viewBox="0 0 34 44" fill="none">
@@ -11,9 +11,10 @@ export function LawctopusGavel({ size = 44, color = 'var(--c-forest)' }) {
 }
 
 export function LawctopusWordmark({ onDark = false, tagline = false, fontSize = 24 }) {
-  const gavelColor   = onDark ? 'var(--c-accent)' : 'var(--c-forest)'
-  const awColor      = onDark ? 'var(--c-accent)' : 'var(--c-forest)'
-  const ctopusColor  = onDark ? 'var(--c-white)' : 'var(--c-ink)'
+  // Match the official Lawctopus wordmark: orange gavel + orange "aw", grey "ctopus"
+  const gavelColor    = 'var(--c-accent)'
+  const awColor       = 'var(--c-accent)'
+  const ctopusColor   = onDark ? 'var(--c-white)' : 'var(--c-ink)'
   const subtitleColor = onDark ? 'rgba(255,255,255,0.55)' : 'var(--c-meta)'
 
   return (
