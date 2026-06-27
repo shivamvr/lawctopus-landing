@@ -1,133 +1,147 @@
-﻿import { useState } from 'react'
-
 const testimonials = [
   {
-    quote: "This program transformed my understanding of contract law. The practical approach and expert guidance helped me secure a role at a top law firm — I drafted real contracts from Day 1!",
+    quote: "Drafted real contracts from Day 1 — this wasn't theory. I landed a role at Cyril Amarchand within two months of completing the program. The feedback on assignments was sharper than anything I got in law school.",
     name: 'Arjun Malhotra',
     org: 'Associate, Cyril Amarchand Mangaldas',
     initials: 'AM',
-    bg: '#efeafb',
-    color: '#4B2FCB',
+    tag: 'Career Placement',
   },
   {
-    quote: "The freelancing track alone was worth the fee. I launched my Upwork profile in Month 4 and landed my first client before the course even ended. Highly recommend for anyone serious about legal freelancing.",
+    quote: "I launched my Upwork profile in Month 4 and landed my first paying client before the course even ended. The freelancing track is worth every rupee — Anup Sir is incredible.",
     name: 'Priya Sharma',
     org: 'Legal Freelancer, Upwork Top-Rated',
     initials: 'PS',
-    bg: '#fff3e8',
-    color: '#F26A1B',
+    tag: 'Freelancing',
   },
   {
-    quote: "Akanksha Ma'am and the faculty are exceptional. The 1-on-1 coaching sessions gave me clarity on my career path. I got placed in a corporate legal team within 2 months of completing the course.",
+    quote: "The 1-on-1 coaching sessions gave me the clarity I never got elsewhere. Placed in a corporate legal team 2 months post-completion. The structured curriculum and live sessions made all the difference.",
     name: 'Rohit Bansal',
     org: 'In-House Counsel, TechCorp India',
     initials: 'RB',
-    bg: '#e8f5ff',
-    color: '#0a66c2',
+    tag: 'Career Placement',
   },
   {
-    quote: "The curriculum is incredibly well-structured. Learning M&A, IPR, and SaaS agreements in depth with real case studies made me conference-room-ready. 20,000+ alumni is a testament to the quality.",
+    quote: "M&A, IPR, SaaS agreements — all covered with real case studies. The quality of content and the depth of instruction make this the best legal upskilling program in India bar none.",
     name: 'Shruti Agarwal',
-    org: 'Associate, Khaitan & Co.',
+    org: 'Senior Associate, Khaitan & Co.',
     initials: 'SA',
-    bg: '#e8fbf0',
-    color: '#138808',
+    tag: 'Skill Building',
+  },
+  {
+    quote: "As an academician, I wanted practical exposure. This course gave me industry-standard templates, live negotiation sessions, and a peer network I still lean on. Highly recommended.",
+    name: 'Dr. Vikram Nair',
+    org: 'Faculty, NLSIU Bangalore',
+    initials: 'VN',
+    tag: 'Academic',
+  },
+  {
+    quote: "The money-back guarantee gave me confidence to enroll. I didn't need it — the program delivered 10x what I expected. Completed 17 assignments, all reviewed with actual written feedback.",
+    name: 'Meera Krishnan',
+    org: 'Contract Lawyer, Remote',
+    initials: 'MK',
+    tag: 'Quality',
   },
 ]
 
-function StarIcon() {
+function StarRow() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="#F6A609">
-      <path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.6 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/>
-    </svg>
+    <div style={{ display: 'flex', gap: 3 }}>
+      {[...Array(5)].map((_, i) => (
+        <svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="#F6A609">
+          <path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.6 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/>
+        </svg>
+      ))}
+    </div>
   )
 }
 
 export default function TestimonialsSection() {
-  const [active, setActive] = useState(0)
-  const t = testimonials[active]
-
   return (
-    <section id="testimonials" style={{ background: '#f5f6fb', padding: '66px 0' }}>
+    <section id="testimonials" className="section" style={{ background: '#F7F7F5', borderTop: '1px solid #E0E0DC' }}>
       <div className="section-wrap">
-        <div style={{ marginBottom: 28 }}>
-          <span className="section-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.8L18 8l-3.6 2.8L15.5 16 12 13.2 8.5 16l1.1-5.2L6 8l4.4-1.2z"/></svg>
-            Student Success
-          </span>
-          <h2 className="heading-display" style={{ fontSize: 'clamp(30px, 3.5vw, 44px)', color: '#161b3a', margin: '14px 0 6px' }}>
-            What Our Learners Say
-          </h2>
-          <p style={{ color: '#6f748f', fontSize: 15 }}>Real stories from 20,000+ trained professionals</p>
+        <div style={{ textAlign: 'center', marginBottom: 52 }}>
+          <span className="chip">Student Stories</span>
+          <h2 className="heading-2" style={{ marginBottom: 14 }}>Real stories, real results</h2>
+          <p style={{ color: '#6B7280', fontSize: 17, maxWidth: 480, margin: '0 auto' }}>
+            Join 20,000+ legal professionals who've already transformed their careers.
+          </p>
         </div>
 
-        {/* Testimonial card */}
-        <div style={{ background: '#fff', border: '1px solid #ebedf6', borderRadius: 20, padding: '28px 30px', marginBottom: 18 }}>
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="#d9d2fb">
-            <path d="M10 7H6a3 3 0 00-3 3v7h7v-7H6c0-1.5 1.5-3 4-3zm11 0h-4a3 3 0 00-3 3v7h7v-7h-4c0-1.5 1.5-3 4-3z"/>
-          </svg>
-          <p style={{ color: '#3a3f5c', fontSize: 15.5, lineHeight: 1.7, margin: '14px 0 24px' }}>
-            {t.quote}
-          </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-            <div style={{
-              width: 50, height: 50, borderRadius: '50%',
-              background: t.bg, border: '2px solid #efeafb',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: 16, fontWeight: 700, color: t.color,
-              fontFamily: 'Sora, sans-serif', flexShrink: 0,
-            }}>
-              {t.initials}
-            </div>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontWeight: 700, fontSize: 14.5, color: '#1b2244' }}>{t.name}</div>
-              <div style={{ color: '#7c809e', fontSize: 12.5 }}>{t.org}</div>
-              <div style={{ display: 'flex', gap: 2, marginTop: 5 }}>
-                {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3,1fr)',
+          gap: 20,
+        }} className="testimonials-grid">
+          {testimonials.map(({ quote, name, org, initials, tag }) => (
+            <div
+              key={name}
+              style={{
+                background: '#fff',
+                border: '1px solid #E0E0DC',
+                borderRadius: 16,
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+                transition: 'box-shadow 0.25s ease, transform 0.25s ease',
+                cursor: 'default',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.12)'; e.currentTarget.style.transform = 'translateY(-4px)' }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)' }}
+            >
+              {/* Top color stripe */}
+              <div style={{ height: 4, background: '#0ABF53' }} />
+
+              <div style={{ padding: '22px 24px 24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                {/* Tag + stars */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
+                  <span style={{
+                    fontSize: 11, fontWeight: 700, color: '#047857',
+                    background: '#E8F7EE', padding: '3px 9px', borderRadius: 999,
+                    textTransform: 'uppercase', letterSpacing: '0.06em',
+                  }}>
+                    {tag}
+                  </span>
+                  <StarRow />
+                </div>
+
+                {/* Quote */}
+                <p style={{
+                  fontSize: 14,
+                  color: '#374151',
+                  lineHeight: 1.7,
+                  flex: 1,
+                  marginBottom: 20,
+                }}>
+                  "{quote}"
+                </p>
+
+                {/* Author */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, borderTop: '1px solid #F0F0EC', paddingTop: 16 }}>
+                  <div style={{
+                    width: 38, height: 38,
+                    borderRadius: '50%',
+                    background: '#044D40',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontSize: 13, fontWeight: 700, color: '#fff',
+                    flexShrink: 0,
+                  }}>
+                    {initials}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 13.5, fontWeight: 700, color: '#1A1A1A' }}>{name}</div>
+                    <div style={{ fontSize: 12, color: '#9CA3AF' }}>{org}</div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Navigation */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14 }}>
-          <button
-            onClick={() => setActive((active - 1 + testimonials.length) % testimonials.length)}
-            style={{
-              width: 36, height: 36, borderRadius: '50%',
-              border: '1px solid #d9dbe9', background: '#fff',
-              color: '#6b7099', cursor: 'pointer',
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-            }}
-          >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M15 6l-6 6 6 6"/></svg>
-          </button>
-          <div style={{ display: 'flex', gap: 7 }}>
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActive(i)}
-                style={{
-                  width: 8, height: 8, borderRadius: '50%', border: 'none',
-                  background: i === active ? '#4B2FCB' : '#cfd2e6',
-                  cursor: 'pointer', padding: 0,
-                }}
-              />
-            ))}
-          </div>
-          <button
-            onClick={() => setActive((active + 1) % testimonials.length)}
-            style={{
-              width: 36, height: 36, borderRadius: '50%',
-              border: '1px solid #d9dbe9', background: '#fff',
-              color: '#6b7099', cursor: 'pointer',
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-            }}
-          >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M9 6l6 6-6 6"/></svg>
-          </button>
+          ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 1023px) { .testimonials-grid { grid-template-columns: repeat(2,1fr) !important; } }
+        @media (max-width: 639px)  { .testimonials-grid { grid-template-columns: 1fr !important; } }
+      `}</style>
     </section>
   )
 }
