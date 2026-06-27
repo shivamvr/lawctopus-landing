@@ -179,6 +179,7 @@ export default function HeroSection({ onDownload }) {
               <img
                 src={heroImg}
                 alt="Lawyers and law students learning contract drafting"
+                className="hero-img"
                 style={{ width: '100%', display: 'block' }}
                 loading="eager"
               />
@@ -258,6 +259,9 @@ export default function HeroSection({ onDownload }) {
       </div>
 
       <style>{`
+        @media (min-width: 901px) {
+          .hero-img { height: 440px; object-fit: cover; object-position: center; }
+        }
         @media (max-width: 900px) {
           .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
         }
