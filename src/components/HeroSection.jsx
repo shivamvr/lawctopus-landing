@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import HeroArt from './HeroArt'
+import heroImg from '../assets/herosection.webp'
 
 const rotatingWords = [
   'Contract Drafting',
@@ -176,7 +176,12 @@ export default function HeroSection({ onDownload }) {
               boxShadow: '0 24px 64px rgba(0,0,0,0.13)',
               border: '1px solid var(--c-border)',
             }}>
-              <HeroArt />
+              <img
+                src={heroImg}
+                alt="Lawyers and law students learning contract drafting"
+                style={{ width: '100%', display: 'block' }}
+                loading="eager"
+              />
             </div>
 
             {/* Floating stat card */}
