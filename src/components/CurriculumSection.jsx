@@ -149,7 +149,7 @@ export default function CurriculumSection() {
               {mod.items.map(item => (
                 <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
                   <CheckIcon />
-                  <span style={{ fontSize: 14.5, color: 'var(--c-heading3)', lineHeight: 1.5 }}>{item}</span>
+                  <span style={{ fontSize: 16, color: 'var(--c-heading3)', lineHeight: 1.5 }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -180,7 +180,7 @@ export default function CurriculumSection() {
                 padding: '12px 0',
                 borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
               }}>
-                <span style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.72)' }}>{label}</span>
+                <span style={{ fontSize: 16, color: 'rgba(255,255,255,0.72)' }}>{label}</span>
                 <span style={{ fontSize: 18, fontWeight: 800, color: 'var(--c-accent)' }}>{value}</span>
               </div>
             ))}
@@ -190,7 +190,7 @@ export default function CurriculumSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
-              style={{ width: '100%', justifyContent: 'center', marginTop: 20, fontSize: 14 }}
+              style={{ width: '100%', justifyContent: 'center', marginTop: 20, fontSize: 16 }}
             >
               Enroll Now — ₹24,999
             </a>

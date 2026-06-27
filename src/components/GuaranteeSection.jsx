@@ -42,7 +42,7 @@ export default function GuaranteeSection() {
               gap: 10,
             }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2" strokeLinecap="round"><path d="M20 6L9 17l-5-5"/></svg>
-              <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--c-heading3)' }}>
+              <span style={{ fontSize: 16, fontWeight: 600, color: 'var(--c-heading3)' }}>
                 No fine print. No partial refunds. 100% back.
               </span>
             </div>
@@ -59,7 +59,7 @@ export default function GuaranteeSection() {
                 padding: '20px 22px',
               }}>
                 <div style={{
-                  fontSize: 13, fontWeight: 800,
+                  fontSize: 16, fontWeight: 800,
                   color: 'var(--c-accent)',
                   fontFamily: "'Inter', monospace",
                   letterSpacing: '0.04em',
@@ -69,8 +69,8 @@ export default function GuaranteeSection() {
                   {num}
                 </div>
                 <div>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--c-ink)', marginBottom: 5 }}>{title}</div>
-                  <div style={{ fontSize: 14, color: 'var(--c-body)', lineHeight: 1.55 }}>{text}</div>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--c-ink)', marginBottom: 5 }}>{title}</div>
+                  <div style={{ fontSize: 16, color: 'var(--c-body)', lineHeight: 1.55 }}>{text}</div>
                 </div>
               </div>
             ))}

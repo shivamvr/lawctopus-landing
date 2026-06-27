@@ -57,7 +57,7 @@ export default function AudienceSection() {
               </div>
               <div>
                 <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--c-ink)', marginBottom: 8 }}>{title}</h3>
-                <p style={{ fontSize: 14, color: 'var(--c-body)', lineHeight: 1.6 }}>{desc}</p>
+                <p style={{ fontSize: 16, color: 'var(--c-body)', lineHeight: 1.6 }}>{desc}</p>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 'auto' }}>
                 {tags.map(t => (

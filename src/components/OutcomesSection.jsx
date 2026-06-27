@@ -112,7 +112,7 @@ export default function OutcomesSection() {
           }}>
             <span className="chip-green">{tab.chip}</span>
             <h3 className="heading-3" style={{ marginBottom: 14 }}>{tab.title}</h3>
-            <p style={{ fontSize: 15.5, color: 'var(--c-body)', lineHeight: 1.65, marginBottom: 28 }}>
+            <p style={{ fontSize: 16, color: 'var(--c-body)', lineHeight: 1.65, marginBottom: 28 }}>
               {tab.body}
             </p>
 
@@ -137,7 +137,7 @@ export default function OutcomesSection() {
             <a
               href={tab.link.href}
               style={{
-                fontSize: 14.5,
+                fontSize: 16,
                 fontWeight: 600,
                 color: 'var(--c-accent)',
                 textDecoration: 'none',

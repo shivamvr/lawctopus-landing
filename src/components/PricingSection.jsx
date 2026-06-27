@@ -124,7 +124,7 @@ export default function PricingSection({ onDownload }) {
                 <div style={{ marginBottom: 24 }}>
                   <span className="chip-green" style={{ marginBottom: 8 }}>{plan.label}</span>
                   <h3 style={{ fontSize: 22, fontWeight: 800, color: 'var(--c-ink)', marginBottom: 4 }}>{plan.name}</h3>
-                  <p style={{ fontSize: 13.5, color: 'var(--c-meta)' }}>{plan.tagline}</p>
+                  <p style={{ fontSize: 16, color: 'var(--c-meta)' }}>{plan.tagline}</p>
                 </div>
 
                 <div style={{ marginBottom: 28 }}>
@@ -139,7 +139,7 @@ export default function PricingSection({ onDownload }) {
                   {plan.features.map(f => (
                     <div key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 9, color: 'var(--c-heading3)' }}>
                       <span style={{ color: 'var(--c-accent)', marginTop: 1 }}><CheckIcon /></span>
-                      <span style={{ fontSize: 14 }}>{f}</span>
+                      <span style={{ fontSize: 16 }}>{f}</span>
                     </div>
                   ))}
                 </div>
@@ -155,7 +155,7 @@ export default function PricingSection({ onDownload }) {
                     color: plan.highlight ? 'var(--c-white)' : 'var(--c-ink)',
                     border: plan.highlight ? 'none' : '1.5px solid var(--c-border)',
                     borderRadius: 8,
-                    fontWeight: 700, fontSize: 15,
+                    fontWeight: 700, fontSize: 16,
                     textDecoration: 'none',
                     transition: 'background 0.2s',
                     marginBottom: 10,
@@ -170,7 +170,7 @@ export default function PricingSection({ onDownload }) {
                     width: '100%', padding: '12px',
                     background: 'transparent', color: 'var(--c-body)',
                     border: 'none', cursor: 'pointer',
-                    fontFamily: 'inherit', fontSize: 13.5, fontWeight: 500,
+                    fontFamily: 'inherit', fontSize: 16, fontWeight: 500,
                     textDecoration: 'underline',
                   }}
                 >
@@ -181,7 +181,7 @@ export default function PricingSection({ onDownload }) {
           })}
         </div>
 
-        <p style={{ textAlign: 'center', fontSize: 13, color: 'var(--c-meta)', marginTop: 24 }}>
+        <p style={{ textAlign: 'center', fontSize: 16, color: 'var(--c-meta)', marginTop: 24 }}>
           No credit card required to download syllabus · EMI options available
         </p>
       </div>

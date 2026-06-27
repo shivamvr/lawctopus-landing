@@ -82,14 +82,14 @@ export default function FacultySection() {
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: 15, fontWeight: 700, color: 'var(--c-white)' }}>{name}</span>
+                    <span style={{ fontSize: 16, fontWeight: 700, color: 'var(--c-white)' }}>{name}</span>
                     {isNew && <span className="badge-new">New</span>}
                   </div>
                   <div style={{ fontSize: 12.5, color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>{role}</div>
                 </div>
               </div>
 
-              <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, marginBottom: 16 }}>
+              <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, marginBottom: 16 }}>
                 {exp}
               </p>
 
@@ -99,7 +99,7 @@ export default function FacultySection() {
                 rel="noopener noreferrer"
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: 6,
-                  color: 'var(--c-accent)', fontSize: 13, fontWeight: 600,
+                  color: 'var(--c-accent)', fontSize: 16, fontWeight: 600,
                   textDecoration: 'none',
                 }}
                 onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'}
@@ -126,7 +126,7 @@ export default function FacultySection() {
           ].map(({ value, label }) => (
             <div key={label} style={{ textAlign: 'center' }}>
               <div style={{ fontSize: 32, fontWeight: 800, color: 'var(--c-accent)', lineHeight: 1 }}>{value}</div>
-              <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', marginTop: 6 }}>{label}</div>
+              <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.55)', marginTop: 6 }}>{label}</div>
             </div>
           ))}
         </div>

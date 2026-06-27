@@ -12,9 +12,27 @@ const navLinks = [
 export default function MainNav({ onDownload }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeId, setActiveId] = useState('')
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
+    const ids = navLinks.map(l => l.href.slice(1))
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10)
+      // Active section = the last one whose top has scrolled above the line
+      // just under the navbar (viewport-relative, so offset-parent agnostic).
+      const probe = 130
+      let current = ''
+      for (const id of ids) {
+        const el = document.getElementById(id)
+        if (el && el.getBoundingClientRect().top <= probe) current = id
+      }
+      // Snap to the final section once scrolled to the very bottom.
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
+        current = ids[ids.length - 1]
+      }
+      setActiveId(current)
+    }
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -41,23 +59,36 @@ export default function MainNav({ onDownload }) {
 
           {/* Desktop nav links */}
           <div style={{ display: 'flex', gap: 32, alignItems: 'center' }} className="nav-links-desktop">
-            {navLinks.map(({ href, label }) => (
-              <a
-                key={href}
-                href={href}
-                style={{
-                  color: 'var(--c-ink)',
-                  textDecoration: 'none',
-                  fontSize: 15,
-                  fontWeight: 500,
-                  transition: 'color 0.15s',
-                }}
-                onMouseEnter={e => e.currentTarget.style.color = 'var(--c-accent)'}
-                onMouseLeave={e => e.currentTarget.style.color = 'var(--c-ink)'}
-              >
-                {label}
-              </a>
-            ))}
+            {navLinks.map(({ href, label }) => {
+              const isActive = activeId === href.slice(1)
+              return (
+                <a
+                  key={href}
+                  href={href}
+                  style={{
+                    position: 'relative',
+                    color: isActive ? 'var(--c-accent)' : 'var(--c-ink)',
+                    textDecoration: 'none',
+                    fontSize: 16,
+                    fontWeight: isActive ? 700 : 500,
+                    transition: 'color 0.15s',
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.color = 'var(--c-accent)'}
+                  onMouseLeave={e => e.currentTarget.style.color = isActive ? 'var(--c-accent)' : 'var(--c-ink)'}
+                >
+                  {label}
+                  <span style={{
+                    position: 'absolute',
+                    left: 0, right: 0, bottom: -22,
+                    height: 2,
+                    background: 'var(--c-accent)',
+                    borderRadius: 2,
+                    opacity: isActive ? 1 : 0,
+                    transition: 'opacity 0.15s',
+                  }} />
+                </a>
+              )
+            })}
           </div>
 
           {/* Desktop actions */}
@@ -71,7 +102,7 @@ export default function MainNav({ onDownload }) {
                 padding: '9px 18px',
                 borderRadius: 8,
                 fontWeight: 600,
-                fontSize: 14,
+                fontSize: 16,
                 cursor: 'pointer',
                 fontFamily: 'inherit',
                 transition: 'border-color 0.2s, background 0.2s',
@@ -86,7 +117,7 @@ export default function MainNav({ onDownload }) {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
-              style={{ fontSize: 14, padding: '10px 20px' }}
+              style={{ fontSize: 16, padding: '10px 20px' }}
             >
               Enroll Now
             </a>
@@ -128,24 +159,27 @@ export default function MainNav({ onDownload }) {
           padding: '12px 20px 20px',
           boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
         }}>
-          {navLinks.map(({ href, label }) => (
-            <a
-              key={href}
-              href={href}
-              onClick={() => setMenuOpen(false)}
-              style={{
-                display: 'block',
-                color: 'var(--c-ink)',
-                textDecoration: 'none',
-                fontSize: 16,
-                fontWeight: 600,
-                padding: '13px 0',
-                borderBottom: '1px solid var(--c-surface-fill)',
-              }}
-            >
-              {label}
-            </a>
-          ))}
+          {navLinks.map(({ href, label }) => {
+            const isActive = activeId === href.slice(1)
+            return (
+              <a
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                style={{
+                  display: 'block',
+                  color: isActive ? 'var(--c-accent)' : 'var(--c-ink)',
+                  textDecoration: 'none',
+                  fontSize: 16,
+                  fontWeight: isActive ? 700 : 600,
+                  padding: '13px 0',
+                  borderBottom: '1px solid var(--c-surface-fill)',
+                }}
+              >
+                {label}
+              </a>
+            )
+          })}
           <div style={{ display: 'flex', gap: 10, marginTop: 16 }}>
             <button
               onClick={() => { onDownload(); setMenuOpen(false) }}
@@ -154,7 +188,7 @@ export default function MainNav({ onDownload }) {
                 border: '1.5px solid var(--c-border)',
                 color: 'var(--c-ink)', padding: '12px',
                 borderRadius: 8, fontWeight: 600,
-                fontSize: 14, cursor: 'pointer', fontFamily: 'inherit',
+                fontSize: 16, cursor: 'pointer', fontFamily: 'inherit',
               }}
             >
               Download Syllabus
@@ -167,7 +201,7 @@ export default function MainNav({ onDownload }) {
                 flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center',
                 background: 'var(--c-accent)', color: 'var(--c-white)',
                 padding: '12px', borderRadius: 8,
-                fontWeight: 600, fontSize: 14,
+                fontWeight: 600, fontSize: 16,
                 textDecoration: 'none', fontFamily: 'inherit',
               }}
             >

@@ -35,13 +35,13 @@ export default function FinalCTA({ onDownload }) {
           <button
             onClick={onDownload}
             className="btn-ghost-dark"
-            style={{ fontSize: 15 }}
+            style={{ fontSize: 16 }}
           >
             Download Syllabus First
           </button>
         </div>
 
-        <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)' }}>
+        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.45)' }}>
           No credit card required · 100% money-back guarantee · Next batch: July 1, 2026
         </p>
       </div>

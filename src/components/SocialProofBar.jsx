@@ -1,14 +1,14 @@
 const logos = [
-  { name: 'Bar & Bench',   style: { fontWeight: 800, fontSize: 15, letterSpacing: '-0.3px' } },
+  { name: 'Bar & Bench',   style: { fontWeight: 800, fontSize: 16, letterSpacing: '-0.3px' } },
   { name: 'Live Law',      style: { fontWeight: 700, fontSize: 16, letterSpacing: '-0.5px' } },
-  { name: 'LegallyIndia', style: { fontWeight: 700, fontSize: 14 } },
-  { name: 'SCC Online',   style: { fontWeight: 600, fontSize: 14, letterSpacing: '0.5px' } },
-  { name: 'iPleaders',    style: { fontWeight: 800, fontSize: 15, letterSpacing: '-0.5px' } },
-  { name: 'The Leaflet',  style: { fontWeight: 700, fontSize: 14, fontStyle: 'italic' } },
+  { name: 'LegallyIndia', style: { fontWeight: 700, fontSize: 16 } },
+  { name: 'SCC Online',   style: { fontWeight: 600, fontSize: 16, letterSpacing: '0.5px' } },
+  { name: 'iPleaders',    style: { fontWeight: 800, fontSize: 16, letterSpacing: '-0.5px' } },
+  { name: 'The Leaflet',  style: { fontWeight: 700, fontSize: 16, fontStyle: 'italic' } },
   { name: 'MANUPATRA',    style: { fontWeight: 600, fontSize: 12, letterSpacing: '2px' } },
-  { name: 'India Legal',  style: { fontWeight: 700, fontSize: 14 } },
-  { name: 'CLATGyan',     style: { fontWeight: 800, fontSize: 15, letterSpacing: '-0.3px' } },
-  { name: 'Law Insider',  style: { fontWeight: 600, fontSize: 14, letterSpacing: '0.3px' } },
+  { name: 'India Legal',  style: { fontWeight: 700, fontSize: 16 } },
+  { name: 'CLATGyan',     style: { fontWeight: 800, fontSize: 16, letterSpacing: '-0.3px' } },
+  { name: 'Law Insider',  style: { fontWeight: 600, fontSize: 16, letterSpacing: '0.3px' } },
 ]
 
 const doubled = [...logos, ...logos]
@@ -23,7 +23,7 @@ export default function SocialProofBar() {
     }}>
       <p style={{
         textAlign: 'center',
-        fontSize: 13,
+        fontSize: 16,
         fontWeight: 600,
         color: 'var(--c-meta)',
         letterSpacing: '0.07em',

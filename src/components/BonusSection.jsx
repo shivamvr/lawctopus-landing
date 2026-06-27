@@ -75,7 +75,7 @@ export default function BonusSection() {
                 {items.map(item => (
                   <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 9 }}>
                     <CheckIcon />
-                    <span style={{ fontSize: 13.5, color: 'var(--c-body)', lineHeight: 1.5 }}>{item}</span>
+                    <span style={{ fontSize: 16, color: 'var(--c-body)', lineHeight: 1.5 }}>{item}</span>
                   </div>
                 ))}
               </div>

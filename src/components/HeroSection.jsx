@@ -57,7 +57,7 @@ export default function HeroSection({ onDownload }) {
               <div style={{ display: 'flex', gap: 2 }}>
                 {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
               </div>
-              <span style={{ fontSize: 13, fontWeight: 500, color: 'var(--c-heading3)' }}>
+              <span style={{ fontSize: 16, fontWeight: 500, color: 'var(--c-heading3)' }}>
                 Rated 4.8/5 by 1,000+ students
               </span>
             </div>
@@ -116,7 +116,7 @@ export default function HeroSection({ onDownload }) {
                   background: 'var(--c-surface-alt)',
                   border: '1px solid var(--c-border)',
                   borderRadius: 8, padding: '7px 12px',
-                  fontSize: 13.5, fontWeight: 500, color: 'var(--c-heading3)',
+                  fontSize: 16, fontWeight: 500, color: 'var(--c-heading3)',
                 }}>
                   <span>{icon}</span> {text}
                 </div>
@@ -137,7 +137,7 @@ export default function HeroSection({ onDownload }) {
               <button
                 onClick={onDownload}
                 className="btn-secondary"
-                style={{ fontSize: 15, padding: '14px 22px' }}
+                style={{ fontSize: 16, padding: '14px 22px' }}
               >
                 Download Syllabus
               </button>
@@ -222,14 +222,14 @@ export default function HeroSection({ onDownload }) {
               }}>
                 Limited Seats
               </span>
-              <span style={{ fontSize: 14.5, fontWeight: 600, color: 'var(--c-heading3)' }}>
+              <span style={{ fontSize: 16, fontWeight: 600, color: 'var(--c-heading3)' }}>
                 Next Batch Starts 1st July 2026
               </span>
             </div>
             <button
               onClick={onDownload}
               className="btn-primary"
-              style={{ fontSize: 13.5, padding: '10px 20px' }}
+              style={{ fontSize: 16, padding: '10px 20px' }}
             >
               Download Syllabus — It's Free
             </button>

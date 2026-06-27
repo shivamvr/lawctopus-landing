@@ -31,7 +31,7 @@ function FAQItem({ item, isOpen, onToggle }) {
           fontFamily: 'inherit',
         }}
       >
-        <span style={{ fontWeight: isOpen ? 700 : 500, fontSize: 15, color: isOpen ? 'var(--c-forest)' : 'var(--c-ink)', lineHeight: 1.4 }}>
+        <span style={{ fontWeight: isOpen ? 700 : 500, fontSize: 16, color: isOpen ? 'var(--c-forest)' : 'var(--c-ink)', lineHeight: 1.4 }}>
           {item.q}
         </span>
         <span style={{
@@ -49,7 +49,7 @@ function FAQItem({ item, isOpen, onToggle }) {
       </button>
       {isOpen && (
         <div style={{ padding: '0 22px 18px', borderTop: '1px solid var(--c-surface-fill)' }}>
-          <p style={{ color: 'var(--c-body)', fontSize: 14.5, lineHeight: 1.7, paddingTop: 14 }}>{item.a}</p>
+          <p style={{ color: 'var(--c-body)', fontSize: 16, lineHeight: 1.7, paddingTop: 14 }}>{item.a}</p>
         </div>
       )}
     </div>

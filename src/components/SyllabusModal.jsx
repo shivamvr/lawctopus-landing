@@ -9,7 +9,7 @@ export default function SyllabusModal({ onClose }) {
     border: '1.5px solid var(--c-border)',
     borderRadius: 8,
     padding: '11px 14px',
-    fontSize: 14,
+    fontSize: 16,
     color: 'var(--c-ink)',
     fontFamily: 'inherit',
     marginBottom: 14,
@@ -63,7 +63,7 @@ export default function SyllabusModal({ onClose }) {
           <h3 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: 21, color: 'var(--c-ink)', marginBottom: 6 }}>
             Download Syllabus
           </h3>
-          <p style={{ color: 'var(--c-meta)', fontSize: 13.5, lineHeight: 1.5 }}>
+          <p style={{ color: 'var(--c-meta)', fontSize: 16, lineHeight: 1.5 }}>
             6-month curriculum · Faculty bios · Pricing breakdown
           </p>
         </div>
@@ -74,7 +74,7 @@ export default function SyllabusModal({ onClose }) {
             <div style={{ textAlign: 'center', padding: '20px 0' }}>
               <CheckCircle style={{ width: 48, height: 48, color: 'var(--c-accent)', margin: '0 auto 16px' }} />
               <h4 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: 19, color: 'var(--c-ink)', marginBottom: 8 }}>You're all set!</h4>
-              <p style={{ color: 'var(--c-meta)', fontSize: 13.5, lineHeight: 1.6, marginBottom: 20 }}>
+              <p style={{ color: 'var(--c-meta)', fontSize: 16, lineHeight: 1.6, marginBottom: 20 }}>
                 We'll send the syllabus to your email shortly. Check your inbox (and spam folder, just in case).
               </p>
               <button
@@ -101,7 +101,7 @@ export default function SyllabusModal({ onClose }) {
                   display: 'flex', alignItems: 'center', gap: 7,
                   border: '1.5px solid var(--c-border)', borderRadius: 8,
                   padding: '0 12px', fontWeight: 600, color: 'var(--c-ink)',
-                  fontSize: 14, flexShrink: 0,
+                  fontSize: 16, flexShrink: 0,
                 }}>
                   <span style={{ display: 'flex', flexDirection: 'column', width: 17, height: 12, borderRadius: 2, overflow: 'hidden', border: '1px solid var(--c-border)' }}>
                     <span style={{ flex: 1, background: 'var(--c-flag-saffron)' }}/>
@@ -124,7 +124,7 @@ export default function SyllabusModal({ onClose }) {
                 className="btn-primary"
                 style={{
                   width: '100%', justifyContent: 'center',
-                  padding: '13px', fontSize: 15,
+                  padding: '13px', fontSize: 16,
                   marginTop: 4,
                   opacity: state.submitting ? 0.7 : 1,
                 }}

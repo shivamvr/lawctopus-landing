@@ -106,7 +106,7 @@ export default function TestimonialsSection() {
 
                 {/* Quote */}
                 <p style={{
-                  fontSize: 14,
+                  fontSize: 16,
                   color: 'var(--c-heading3)',
                   lineHeight: 1.7,
                   flex: 1,
@@ -122,13 +122,13 @@ export default function TestimonialsSection() {
                     borderRadius: '50%',
                     background: 'var(--c-forest)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: 13, fontWeight: 700, color: 'var(--c-white)',
+                    fontSize: 16, fontWeight: 700, color: 'var(--c-white)',
                     flexShrink: 0,
                   }}>
                     {initials}
                   </div>
                   <div>
-                    <div style={{ fontSize: 13.5, fontWeight: 700, color: 'var(--c-ink)' }}>{name}</div>
+                    <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--c-ink)' }}>{name}</div>
                     <div style={{ fontSize: 12, color: 'var(--c-meta)' }}>{org}</div>
                   </div>
                 </div>
