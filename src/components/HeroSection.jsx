@@ -16,6 +16,26 @@ function StarIcon() {
   )
 }
 
+// Small orange line icons for the hero feature pills
+const pillIcon = {
+  width: 16, height: 16, viewBox: '0 0 24 24', fill: 'none',
+  stroke: 'var(--c-accent)', strokeWidth: 1.8,
+  strokeLinecap: 'round', strokeLinejoin: 'round',
+  style: { flexShrink: 0 },
+}
+const CalendarIcon = () => (
+  <svg {...pillIcon}><rect x="3.5" y="5" width="17" height="15" rx="2.5" /><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3" /></svg>
+)
+const DocIcon = () => (
+  <svg {...pillIcon}><path d="M6 3.5h7l5 5v11a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 19.5V5A1.5 1.5 0 0 1 6 3.5z" /><path d="M13 3.5V8.5h5M8.5 13h7M8.5 16.5h5" /></svg>
+)
+const CapIcon = () => (
+  <svg {...pillIcon}><path d="M12 5 2.5 8.5 12 12l9.5-3.5L12 5z" /><path d="M6.5 10v4c0 1.3 2.5 2.5 5.5 2.5s5.5-1.2 5.5-2.5v-4M21.5 8.5v4" /></svg>
+)
+const BriefcaseIcon = () => (
+  <svg {...pillIcon}><rect x="3.5" y="7.5" width="17" height="12" rx="2" /><path d="M8.5 7.5V6a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v1.5M3.5 12.5h17" /></svg>
+)
+
 export default function HeroSection({ onDownload }) {
   const [wordIdx, setWordIdx]   = useState(0)
   const [visible, setVisible]   = useState(true)
@@ -106,19 +126,19 @@ export default function HeroSection({ onDownload }) {
             {/* Feature pills */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 36 }}>
               {[
-                { icon: '🗓', text: '6 Months · Online' },
-                { icon: '📄', text: '24 Real Contracts' },
-                { icon: '🎓', text: 'Certificate on Completion' },
-                { icon: '💼', text: 'Freelancing Track' },
+                { icon: <CalendarIcon />, text: '6 Months · Online' },
+                { icon: <DocIcon />, text: '24 Real Contracts' },
+                { icon: <CapIcon />, text: 'Certificate on Completion' },
+                { icon: <BriefcaseIcon />, text: 'Freelancing Track' },
               ].map(({ icon, text }) => (
                 <div key={text} style={{
-                  display: 'flex', alignItems: 'center', gap: 6,
+                  display: 'flex', alignItems: 'center', gap: 7,
                   background: 'var(--c-surface-alt)',
                   border: '1px solid var(--c-border)',
                   borderRadius: 8, padding: '7px 12px',
                   fontSize: 16, fontWeight: 500, color: 'var(--c-heading3)',
                 }}>
-                  <span>{icon}</span> {text}
+                  {icon}<span>{text}</span>
                 </div>
               ))}
             </div>
