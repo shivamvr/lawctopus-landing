@@ -1,91 +1,92 @@
-﻿const bonuses = [
+const bonuses = [
   {
-    eyebrow: 'AI for Legal Practice',
-    title: 'AI Tools Built In',
     icon: '🤖',
+    chip: 'AI for Legal Practice',
+    title: 'AI Tools Built Into the Course',
     items: [
       'Monthly live sessions with Indian Kanoon (Prism) & Jurisphere',
       '4-hour recorded AI workshop — research, drafting, litigation',
-      '1-month complimentary Prism access',
-      '31-page AI Prompts eBook for lawyers & students',
+      '1-month complimentary Prism access (₹999 value)',
+      '31-page AI Prompts eBook exclusively for legal professionals',
     ],
   },
   {
-    eyebrow: 'Career Launchpad',
-    title: 'Full Career Support',
     icon: '🚀',
+    chip: 'Career Launchpad',
+    title: 'Full Career Support Package',
     items: [
       'CV & LinkedIn profile building workshop',
-      'Cover letter drafting sessions',
-      'Upwork & Fiverr profile setup + opportunity sharing',
-      'Bi-monthly 1-on-1 career coaching (30–45 min)',
+      'Cover letter drafting sessions with feedback',
+      'Upwork & Fiverr profile setup + job opportunity sharing',
+      'Bi-monthly 1-on-1 career coaching with program head',
     ],
   },
   {
-    eyebrow: 'Recognition',
-    title: 'Certificates & Merit',
-    icon: '🏆',
-    items: [
-      'Completion certificate for all graduates',
-      'Merit certificate for top performers',
-      'Free access to future contract drafting webinars',
-      'Profile sharing with partner organizations',
-    ],
-  },
-  {
-    eyebrow: 'Community',
-    title: 'Exclusive Network',
     icon: '🤝',
+    chip: 'Community & Networking',
+    title: 'Alumni Network & Networking',
     items: [
-      'WhatsApp groups for jobs, internships & freelancing',
-      'Monthly networking sessions with industry professionals',
-      'Lifetime alumni group access',
-      'Exclusive discounts on future Lawctopus courses',
+      'Monthly networking sessions with senior lawyers & recruiters',
+      'Lifetime access to 20,000+ member legal professional community',
+      'Exclusive WhatsApp group with fellow students & alumni',
+      'Access to job boards and exclusive internship postings',
     ],
   },
 ]
 
+const CheckIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0ABF53" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 2 }}>
+    <path d="M20 6L9 17l-5-5"/>
+  </svg>
+)
+
 export default function BonusSection() {
   return (
-    <section style={{ background: '#f5f6fb', padding: '66px 0', borderTop: '1px solid #ebedf6' }}>
+    <section className="section" style={{ background: '#F7F7F5', borderTop: '1px solid #E0E0DC' }}>
       <div className="section-wrap">
-        <div style={{ marginBottom: 28 }}>
-          <span className="section-badge">Included with Enrollment</span>
-          <h2 className="heading-display" style={{ fontSize: 'clamp(30px, 3.5vw, 44px)', color: '#161b3a', margin: '14px 0 6px' }}>
-            Everything You Get
+        <div style={{ textAlign: 'center', marginBottom: 52 }}>
+          <span className="chip">What's Included</span>
+          <h2 className="heading-2" style={{ marginBottom: 14 }}>
+            Beyond just a course — a complete ecosystem
           </h2>
-          <p style={{ color: '#6f748f', fontSize: 15 }}>Beyond the curriculum — career support, AI tools, and community.</p>
+          <p style={{ color: '#6B7280', fontSize: 17, maxWidth: 500, margin: '0 auto' }}>
+            Every tool, every session, every connection you need to launch and grow your legal career.
+          </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }} className="bonus-grid">
-          {bonuses.map(({ eyebrow, title, icon, items }) => (
-            <div key={title} style={{
-              background: '#fff',
-              border: '1px solid #ebedf6',
-              borderRadius: 18,
-              padding: '22px 24px',
-              boxShadow: '0 2px 12px rgba(75,47,203,.05)',
-            }}>
-              <div style={{ fontSize: 28, marginBottom: 10 }}>{icon}</div>
-              <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#9298c0', marginBottom: 6 }}>{eyebrow}</p>
-              <h3 style={{ fontWeight: 700, fontSize: 16.5, color: '#1b2244', marginBottom: 14 }}>{title}</h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3,1fr)',
+          gap: 20,
+        }} className="bonus-grid">
+          {bonuses.map(({ icon, chip, title, items }) => (
+            <div key={title} className="feature-card">
+              <div style={{
+                width: 52, height: 52, borderRadius: 14,
+                background: '#E8F7EE',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontSize: 24, marginBottom: 16,
+              }}>
+                {icon}
+              </div>
+              <span className="chip-green" style={{ marginBottom: 10 }}>{chip}</span>
+              <h3 style={{ fontSize: 17, fontWeight: 700, color: '#1A1A1A', marginBottom: 16, lineHeight: 1.3 }}>{title}</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {items.map(item => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '5px 0', color: '#41465f', fontSize: 13.5, lineHeight: 1.5 }}>
-                    <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4B2FCB', flexShrink: 0, marginTop: 6 }} />
-                    {item}
-                  </li>
+                  <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 9 }}>
+                    <CheckIcon />
+                    <span style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.5 }}>{item}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 699px) {
-          .bonus-grid { grid-template-columns: 1fr !important; }
-        }
+        @media (max-width: 1023px) { .bonus-grid { grid-template-columns: repeat(2,1fr) !important; } }
+        @media (max-width: 639px)  { .bonus-grid { grid-template-columns: 1fr !important; } }
       `}</style>
     </section>
   )
