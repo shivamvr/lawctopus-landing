@@ -1,53 +1,158 @@
-﻿const outcomes = [
-  { title: 'Draft 24 Real Contracts', description: 'From NDAs and employment agreements to international commercial contracts and IPR licenses.', icon: '📝' },
-  { title: 'Save 4 Years of Your Career', description: 'Compress years of on-the-job learning into one structured, expert-led 6-month program.', icon: '⏱️' },
-  { title: '10 Contracts with Expert Feedback', description: 'Submit drafts and receive personalized, line-by-line feedback from practicing lawyers.', icon: '✅' },
-  { title: 'Launch Your Freelancing Career', description: 'Build your Upwork and LinkedIn presence with a top-rated Upwork legal freelancer as your guide.', icon: '🚀' },
-  { title: 'Master AI for Legal Drafting', description: 'Monthly AI sessions with Indian Kanoon and Jurisphere, plus a 31-page AI Prompts eBook.', icon: '🤖' },
-  { title: 'Lifetime Access to Materials', description: 'Keep 800+ pages of reading material, 32+ hours of recorded lectures, and alumni access — forever.', icon: '♾️' },
+import { useState } from 'react'
+
+const tabs = [
+  {
+    chip: 'Hands-on Learning',
+    title: 'Draft real contracts, get real feedback',
+    body: '55 live sessions and 17 graded assignments covering 24+ contract types used in top Indian & international law firms. Every draft is reviewed by a practicing lawyer — not a bot.',
+    link: { label: 'See the full curriculum →', href: '#curriculum' },
+    stats: [
+      { value: '55', label: 'Live sessions' },
+      { value: '24+', label: 'Contract types' },
+      { value: '17', label: 'Assignments' },
+    ],
+  },
+  {
+    chip: 'Practicing Lawyers',
+    title: 'Learn from those who do it every day',
+    body: 'Every instructor is an active legal professional — partners, senior associates, and in-house counsels at leading firms. No full-time academics. Pure practical knowledge.',
+    link: { label: 'Meet the faculty →', href: '#instructors' },
+    stats: [
+      { value: '8+', label: 'Expert instructors' },
+      { value: '15+', label: 'Years avg. experience' },
+      { value: '100%', label: 'Practicing lawyers' },
+    ],
+  },
+  {
+    chip: 'Career Launch',
+    title: 'Start earning before you finish the course',
+    body: 'Build your Upwork profile, get LinkedIn coaching, join bi-monthly 1-on-1 career sessions, and tap into our alumni network of 20,000+ legal professionals. Your career starts on Day 1.',
+    link: { label: 'See career outcomes →', href: '#pricing' },
+    stats: [
+      { value: '20,000+', label: 'Alumni network' },
+      { value: '₹2L+', label: 'Monthly earning potential' },
+      { value: '1-on-1', label: 'Career coaching sessions' },
+    ],
+  },
 ]
 
 export default function OutcomesSection() {
+  const [active, setActive] = useState(0)
+  const tab = tabs[active]
+
   return (
-    <section style={{ background: '#fff', padding: '66px 0', borderTop: '1px solid #ebedf6' }}>
+    <section className="section" style={{ background: '#F7F7F5', borderTop: '1px solid #E0E0DC' }}>
       <div className="section-wrap">
-        <div style={{ marginBottom: 28 }}>
-          <span className="section-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.8L18 8l-3.6 2.8L15.5 16 12 13.2 8.5 16l1.1-5.2L6 8l4.4-1.2z"/></svg>
-            Learning Outcomes
-          </span>
-          <h2 className="heading-display" style={{ fontSize: 'clamp(30px, 3.5vw, 44px)', color: '#161b3a', margin: '14px 0 6px' }}>
-            What You'll Walk Away With
+        <div style={{ textAlign: 'center', marginBottom: 52 }}>
+          <span className="chip">Why Lawctopus CDN</span>
+          <h2 className="heading-2" style={{ marginBottom: 14 }}>
+            Everything you need to launch your career
           </h2>
-          <p style={{ color: '#6f748f', fontSize: 15 }}>Practical, career-defining skills — not just theoretical knowledge.</p>
+          <p style={{ color: '#6B7280', fontSize: 17, maxWidth: 500, margin: '0 auto' }}>
+            Not just a course — a complete career accelerator for legal professionals.
+          </p>
         </div>
+
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: 16,
+          gridTemplateColumns: '1fr 1fr',
+          gap: 40,
+          alignItems: 'start',
         }} className="outcomes-grid">
-          {outcomes.map(({ title, description, icon }) => (
-            <div key={title} style={{
-              background: '#f5f6fb',
-              border: '1px solid #ebedf6',
-              borderRadius: 16,
-              padding: '22px 20px',
+
+          {/* Left: tab switcher */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {tabs.map((t, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                style={{
+                  textAlign: 'left',
+                  padding: '20px 22px',
+                  borderRadius: 12,
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  background: active === i ? '#fff' : 'transparent',
+                  boxShadow: active === i ? '0 4px 16px rgba(0,0,0,0.08)' : 'none',
+                  borderLeft: active === i ? '3px solid #0ABF53' : '3px solid transparent',
+                  transition: 'all 0.2s ease',
+                }}
+              >
+                <div style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  color: active === i ? '#0ABF53' : '#9CA3AF',
+                  marginBottom: 6,
+                }}>
+                  {t.chip}
+                </div>
+                <div style={{
+                  fontSize: 17,
+                  fontWeight: 700,
+                  color: active === i ? '#1A1A1A' : '#6B7280',
+                  lineHeight: 1.3,
+                }}>
+                  {t.title}
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* Right: content panel */}
+          <div key={active} style={{
+            background: '#fff',
+            borderRadius: 16,
+            padding: '32px',
+            border: '1px solid #E0E0DC',
+            boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
+            animation: 'word-in 300ms ease forwards',
+          }}>
+            <span className="chip-green">{tab.chip}</span>
+            <h3 className="heading-3" style={{ marginBottom: 14 }}>{tab.title}</h3>
+            <p style={{ fontSize: 15.5, color: '#6B7280', lineHeight: 1.65, marginBottom: 28 }}>
+              {tab.body}
+            </p>
+
+            {/* Stats row */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3,1fr)',
+              gap: 16,
+              marginBottom: 24,
+              padding: '20px 0',
+              borderTop: '1px solid #F0F0EC',
+              borderBottom: '1px solid #F0F0EC',
             }}>
-              <div style={{ fontSize: 26, marginBottom: 10 }}>{icon}</div>
-              <h3 style={{ fontWeight: 700, fontSize: 15, color: '#1b2244', marginBottom: 8 }}>{title}</h3>
-              <p style={{ color: '#6f748f', fontSize: 13.5, lineHeight: 1.6 }}>{description}</p>
+              {tab.stats.map(({ value, label }) => (
+                <div key={label} style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: '#044D40', lineHeight: 1 }}>{value}</div>
+                  <div style={{ fontSize: 12, color: '#9CA3AF', fontWeight: 500, marginTop: 4 }}>{label}</div>
+                </div>
+              ))}
             </div>
-          ))}
+
+            <a
+              href={tab.link.href}
+              style={{
+                fontSize: 14.5,
+                fontWeight: 600,
+                color: '#0ABF53',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'}
+              onMouseLeave={e => e.currentTarget.style.textDecoration = 'none'}
+            >
+              {tab.link.label}
+            </a>
+          </div>
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 1079px) {
-          .outcomes-grid { grid-template-columns: repeat(2,1fr) !important; }
-        }
-        @media (max-width: 699px) {
-          .outcomes-grid { grid-template-columns: 1fr !important; }
-        }
+        @media (max-width: 767px) { .outcomes-grid { grid-template-columns: 1fr !important; } }
       `}</style>
     </section>
   )
