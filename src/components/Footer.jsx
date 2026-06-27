@@ -1,152 +1,156 @@
-const quickLinks = ['About Us', 'Curriculum', 'Instructors', 'Testimonials', 'FAQ']
-const resources = ['Blog', 'Legal Articles', 'Career Guide', 'Webinars', 'Syllabus']
-const support = ['Contact Us', 'Help Center', 'Privacy Policy', 'Terms & Conditions']
+import { LawctopusWordmark } from './Logo'
 
-function SocialLink({ children, href = '#' }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        width: 38, height: 38, borderRadius: 10,
-        background: 'rgba(255,255,255,.06)',
-        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-        color: '#c0c5e4', textDecoration: 'none',
-      }}
-    >
-      {children}
-    </a>
-  )
-}
+const cols = [
+  {
+    head: 'Program',
+    links: ['Curriculum', 'Instructors', 'Testimonials', 'Pricing', 'Bonuses', 'Guarantee'],
+    hrefs: ['#curriculum', '#instructors', '#testimonials', '#pricing', '#', '#'],
+  },
+  {
+    head: 'Compare',
+    links: ['2-Month vs 6-Month', 'vs Other Courses', 'CDN vs LLM', 'CDN vs Internship'],
+    hrefs: ['#pricing', '#', '#', '#'],
+  },
+  {
+    head: 'Resources',
+    links: ['Download Syllabus', 'Legal Blog', 'Career Guide', 'AI Tools for Lawyers', 'Webinars'],
+    hrefs: ['#', 'https://lawctopus.com', '#', '#', '#'],
+  },
+  {
+    head: 'Support',
+    links: ['Contact Us', 'Help Center', 'Privacy Policy', 'Terms & Conditions', 'Refund Policy'],
+    hrefs: ['mailto:support@lawctopus.com', '#', '#', '#', '#'],
+  },
+  {
+    head: 'Company',
+    links: ['About Lawctopus', 'Lawctopus Law School', 'For Law Firms', 'Partner With Us', 'Press'],
+    hrefs: ['https://lawctopus.com/about', 'https://lawctopus.com', '#', '#', '#'],
+  },
+]
+
+const socials = [
+  { label: 'LinkedIn', href: 'https://linkedin.com', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7c.6-1 1.9-2 3.7-2 3 0 4.5 1.9 4.5 5.6V21h-4v-5.7c0-1.5-.5-2.5-1.9-2.5-1 0-1.7.7-1.9 1.4-.1.2-.1.6-.1.9V21h-4z"/></svg> },
+  { label: 'Twitter', href: 'https://twitter.com', icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> },
+  { label: 'Instagram', href: 'https://instagram.com', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> },
+  { label: 'YouTube', href: 'https://youtube.com', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.5 6.5s-.2-1.6-.9-2.3c-.9-.9-1.8-.9-2.3-1C17 3 12 3 12 3s-5 0-7.3.2c-.5.1-1.4.1-2.3 1-.7.7-.9 2.3-.9 2.3S1.2 8.3 1.2 10v1.6c0 1.7.3 3.4.3 3.4s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.6.2 7.6.2s5 0 7.3-.2c.5-.1 1.4-.1 2.3-1 .7-.7.9-2.3.9-2.3s.3-1.7.3-3.4V10c-.1-1.7-.4-3.5-.4-3.5zm-13.3 7.1V8.4l6.2 2.6-6.2 2.6z"/></svg> },
+]
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#070a20', color: '#c0c5e4', padding: '56px 0 24px' }}>
+    <footer style={{ background: '#044D40', color: 'rgba(255,255,255,0.7)', padding: '72px 0 0' }}>
       <div className="section-wrap">
+        {/* Top: logo + social */}
         <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1.6fr 1fr 1fr 1fr 1.5fr',
-          gap: 28,
-          rowGap: 36,
-        }} className="footer-grid">
-
-          {/* Brand */}
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          flexWrap: 'wrap',
+          gap: 24,
+          marginBottom: 48,
+          paddingBottom: 48,
+          borderBottom: '1px solid rgba(255,255,255,0.1)',
+        }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-              <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
-                <ellipse cx="24" cy="18" rx="13" ry="12" fill="#F26A1B"/>
-                <circle cx="19" cy="17" r="2.4" fill="#fff"/><circle cx="29" cy="17" r="2.4" fill="#fff"/>
-                <path d="M13 26c-2 5-3 8-7 10M18 28c-1 5-2 8-4 11M24 29v12M30 28c1 5 2 8 4 11M35 26c2 5 3 8 7 10" stroke="#F26A1B" strokeWidth="4" strokeLinecap="round"/>
-              </svg>
-              <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: 21, color: '#fff', letterSpacing: '-0.5px' }}>Lawctopus</div>
-            </div>
-            <p style={{ color: '#9298c0', fontSize: 13.5, lineHeight: 1.7, maxWidth: 280 }}>
-              Empowering the next generation of legal professionals with industry-relevant education. India's most trusted legal career platform.
+            <LawctopusWordmark onDark fontSize={22} tagline />
+            <p style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.5)', marginTop: 14, maxWidth: 260, lineHeight: 1.6 }}>
+              India's leading platform for legal career development — from students to senior associates.
             </p>
-            <div style={{ display: 'flex', gap: 10, marginTop: 18 }}>
-              <SocialLink>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg>
-              </SocialLink>
-              <SocialLink>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
-              </SocialLink>
-              <SocialLink>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7c.6-1 1.9-2 3.7-2 3 0 4.5 1.9 4.5 5.6V21h-4v-5.7c0-1.5-.5-2.5-1.9-2.5-1 0-1.7.7-1.9 1.4-.1.2-.1.6-.1.9V21h-4z"/></svg>
-              </SocialLink>
-              <SocialLink href="https://www.youtube.com/@lawctopus">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3-.4-4.4a2.7 2.7 0 00-1.9-1.9C18.3 5.3 12 5.3 12 5.3s-6.3 0-7.7.4a2.7 2.7 0 00-1.9 1.9C2 9 2 12 2 12s0 3 .4 4.4a2.7 2.7 0 001.9 1.9c1.4.4 7.7.4 7.7.4s6.3 0 7.7-.4a2.7 2.7 0 001.9-1.9C22 15 22 12 22 12zm-12 3V9l5 3z"/></svg>
-              </SocialLink>
-            </div>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <div style={{ color: '#fff', fontWeight: 700, fontSize: 14.5, marginBottom: 16 }}>Quick Links</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 11, fontSize: 13.5 }}>
-              {quickLinks.map(l => (
-                <a key={l} href={`#${l.toLowerCase().replace(/\s/g,'')}`} style={{ color: '#9298c0', textDecoration: 'none' }}>{l}</a>
-              ))}
-            </div>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <div style={{ color: '#fff', fontWeight: 700, fontSize: 14.5, marginBottom: 16 }}>Resources</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 11, fontSize: 13.5 }}>
-              {resources.map(l => (
-                <a key={l} href="https://www.lawctopus.com" target="_blank" rel="noopener noreferrer" style={{ color: '#9298c0', textDecoration: 'none' }}>{l}</a>
-              ))}
-            </div>
-          </div>
-
-          {/* Support */}
-          <div>
-            <div style={{ color: '#fff', fontWeight: 700, fontSize: 14.5, marginBottom: 16 }}>Support</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 11, fontSize: 13.5 }}>
-              {support.map(l => (
-                <a key={l} href="#" style={{ color: '#9298c0', textDecoration: 'none' }}>{l}</a>
-              ))}
-            </div>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <div style={{ color: '#fff', fontWeight: 700, fontSize: 14.5, marginBottom: 14 }}>Stay Updated</div>
-            <p style={{ color: '#9298c0', fontSize: 13.5, lineHeight: 1.6, marginBottom: 14 }}>
-              Subscribe for the latest legal insights and course updates.
-            </p>
-            <div style={{
-              display: 'flex',
-              background: 'rgba(255,255,255,.06)',
-              border: '1px solid rgba(255,255,255,.12)',
-              borderRadius: 11, padding: 5, gap: 6,
-            }}>
-              <input
-                type="email"
-                placeholder="Enter your email"
+          <div style={{ display: 'flex', gap: 8 }}>
+            {socials.map(({ label, href, icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
                 style={{
-                  flex: 1, minWidth: 0,
-                  background: 'transparent', border: 'none',
-                  color: '#fff', padding: '8px 10px', fontSize: 13.5,
-                  fontFamily: 'inherit', outline: 'none',
+                  width: 36, height: 36,
+                  borderRadius: '50%',
+                  background: 'rgba(255,255,255,0.1)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  color: 'rgba(255,255,255,0.7)',
+                  textDecoration: 'none',
+                  transition: 'background 0.2s, color 0.2s',
                 }}
-              />
-              <button style={{
-                width: 40, height: 40, borderRadius: 9,
-                background: '#F26A1B', border: 'none',
-                color: '#fff', cursor: 'pointer',
-                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                flexShrink: 0,
-              }}>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <path d="M5 12h14M13 6l6 6-6 6"/>
-                </svg>
-              </button>
-            </div>
-            <div style={{ marginTop: 16, fontSize: 13, color: '#9298c0' }}>
-              <div>courses@lawctopus.com</div>
-              <div>+91 9214883452</div>
-            </div>
+                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.2)'; e.currentTarget.style.color = '#fff' }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)' }}
+              >
+                {icon}
+              </a>
+            ))}
           </div>
         </div>
 
+        {/* Link columns */}
         <div style={{
-          borderTop: '1px solid rgba(255,255,255,.08)',
-          marginTop: 40, paddingTop: 22,
-          textAlign: 'center', color: '#8086ac', fontSize: 13,
+          display: 'grid',
+          gridTemplateColumns: 'repeat(5,1fr)',
+          gap: 32,
+          marginBottom: 48,
+        }} className="footer-cols">
+          {cols.map(({ head, links, hrefs }) => (
+            <div key={head}>
+              <div style={{
+                fontSize: 11,
+                fontWeight: 600,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                color: 'rgba(255,255,255,0.38)',
+                marginBottom: 16,
+              }}>
+                {head}
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                {links.map((link, i) => (
+                  <a
+                    key={link}
+                    href={hrefs[i]}
+                    style={{
+                      fontSize: 14,
+                      color: 'rgba(255,255,255,0.62)',
+                      textDecoration: 'none',
+                      lineHeight: 2,
+                      transition: 'color 0.15s',
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.color = '#fff'}
+                    onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.62)'}
+                  >
+                    {link}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom bar */}
+        <div style={{
+          borderTop: '1px solid rgba(255,255,255,0.1)',
+          padding: '20px 0',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: 12,
         }}>
-          © 2026 Lawctopus Law School. All rights reserved. · India's most trusted legal education platform.
+          <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+            {['Cookie Settings', 'Privacy Policy', 'Terms of Service', 'Refund Policy'].map(l => (
+              <a key={l} href="#" style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.15s' }}
+                onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.8)'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.4)'}
+              >{l}</a>
+            ))}
+          </div>
+          <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)' }}>
+            © Lawctopus 2026. All rights reserved.
+          </span>
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 1079px) {
-          .footer-grid { grid-template-columns: 1fr 1fr 1fr !important; }
-        }
-        @media (max-width: 699px) {
-          .footer-grid { grid-template-columns: 1fr 1fr !important; }
-        }
+        @media (max-width: 1023px) { .footer-cols { grid-template-columns: repeat(3,1fr) !important; } }
+        @media (max-width: 639px)  { .footer-cols { grid-template-columns: repeat(2,1fr) !important; } }
       `}</style>
     </footer>
   )

@@ -22,7 +22,7 @@ function App() {
   const closeModal = () => setIsModalOpen(false)
 
   return (
-    <div style={{ minHeight: '100vh', background: '#fff' }}>
+    <div style={{ minHeight: '100vh' }}>
       <MainNav onDownload={openModal} />
       <HeroSection onDownload={openModal} />
       <SocialProofBar />
