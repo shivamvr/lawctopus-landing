@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import heroImg from '../assets/hero.png'
+import HeroArt from './HeroArt'
 
 const rotatingWords = [
   'Contract Drafting',
@@ -156,12 +156,7 @@ export default function HeroSection({ onDownload }) {
               boxShadow: '0 24px 64px rgba(0,0,0,0.13)',
               border: '1px solid var(--c-border)',
             }}>
-              <img
-                src={heroImg}
-                alt="Contract Drafting & Freelancing Course"
-                style={{ width: '100%', display: 'block', objectFit: 'cover' }}
-                loading="eager"
-              />
+              <HeroArt />
             </div>
 
             {/* Floating stat card */}
