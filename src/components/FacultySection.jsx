@@ -1,10 +1,17 @@
+import akankshaImg from '../assets/faculty/akanksha-mishra.png'
+import shashankImg from '../assets/faculty/shashank-sardesai.png'
+import pranjalImg from '../assets/faculty/pranjal-doshi.png'
+import anupImg from '../assets/faculty/anup-menon.png'
+import gouravImg from '../assets/faculty/gourav-mohanty.png'
+import tanujImg from '../assets/faculty/tanuj-kalia.png'
+
 const faculty = [
-  { name: 'Akanksha Mishra', role: 'Head, Lawctopus Law School', exp: 'SLS Pune · LLM Gold Medal · 1,500+ learners · 96.5/100 rating', initials: 'AM', isNew: true },
-  { name: 'Shashank Sardesai', role: 'Co-founder, EverTrust Legal', exp: 'Wadia Ghandy · HSA Advocates · Khaitan Legal · Company Secretary', initials: 'SS' },
-  { name: 'Pranjal Doshi', role: 'Associate, Walker Morris LLP (UK)', exp: 'HNLU · Cambridge · Trilegal · Khaitan & Co. · M&A specialist', initials: 'PD' },
-  { name: 'Anup Menon V', role: 'Senior Legal Counsel & Freelancer', exp: 'Top-rated Upwork freelancer · LLM Corporate Laws · Tech & banking advisor', initials: 'AV', isNew: true },
-  { name: 'Gourav Mohanty', role: 'Advocate, Bombay High Court', exp: 'Gold medal · Symbiosis · Ram Jethmalani Scholar · Linklaters winner', initials: 'GM' },
-  { name: 'Tanuj Kalia', role: 'Founding CEO, Lawctopus', exp: 'NUJS Kolkata · TEDx Speaker · BW Legal 40 Under 40 · Author', initials: 'TK' },
+  { name: 'Akanksha Mishra', role: 'Head, Lawctopus Law School', exp: 'SLS Pune · LLM Gold Medal · 1,500+ learners · 96.5/100 rating', img: akankshaImg, isNew: true },
+  { name: 'Shashank Sardesai', role: 'Co-founder, EverTrust Legal', exp: 'Wadia Ghandy · HSA Advocates · Khaitan Legal · Company Secretary', img: shashankImg },
+  { name: 'Pranjal Doshi', role: 'Associate, Walker Morris LLP (UK)', exp: 'HNLU · Cambridge · Trilegal · Khaitan & Co. · M&A specialist', img: pranjalImg },
+  { name: 'Anup Menon V', role: 'Senior Legal Counsel & Freelancer', exp: 'Top-rated Upwork freelancer · LLM Corporate Laws · Tech & banking advisor', img: anupImg, isNew: true },
+  { name: 'Gourav Mohanty', role: 'Advocate, Bombay High Court', exp: 'Gold medal · Symbiosis · Ram Jethmalani Scholar · Linklaters winner', img: gouravImg },
+  { name: 'Tanuj Kalia', role: 'Founding CEO, Lawctopus', exp: 'NUJS Kolkata · TEDx Speaker · BW Legal 40 Under 40 · Author', img: tanujImg },
 ]
 
 function LinkedInIcon() {
@@ -56,7 +63,7 @@ export default function FacultySection() {
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: 20,
         }} className="faculty-grid">
-          {faculty.map(({ name, role, exp, initials, isNew }) => (
+          {faculty.map(({ name, role, exp, img, isNew }) => (
             <div key={name} style={{
               background: 'rgba(255,255,255,0.07)',
               border: '1px solid rgba(255,255,255,0.1)',
@@ -70,16 +77,19 @@ export default function FacultySection() {
             >
               {/* Avatar + badge */}
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-                <div style={{
-                  width: 52, height: 52,
-                  borderRadius: '50%',
-                  background: 'var(--c-accent)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 16, fontWeight: 800, color: 'var(--c-white)',
-                  flexShrink: 0,
-                }}>
-                  {initials}
-                </div>
+                <img
+                  src={img}
+                  alt={name}
+                  loading="lazy"
+                  style={{
+                    width: 56, height: 56,
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    objectPosition: '50% 18%',
+                    background: 'var(--c-accent)',
+                    flexShrink: 0,
+                  }}
+                />
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
                     <span style={{ fontSize: 16, fontWeight: 700, color: 'var(--c-white)' }}>{name}</span>
