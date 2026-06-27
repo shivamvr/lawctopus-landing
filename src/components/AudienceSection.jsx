@@ -27,14 +27,14 @@ const audiences = [
 
 export default function AudienceSection() {
   return (
-    <section className="section" style={{ background: '#fff' }}>
+    <section className="section" style={{ background: 'var(--c-white)' }}>
       <div className="section-wrap">
         <div style={{ textAlign: 'center', marginBottom: 52 }}>
           <span className="chip">Who is this for</span>
           <h2 className="heading-2" style={{ marginBottom: 14 }}>
             Built for every stage of your legal career
           </h2>
-          <p style={{ color: '#6B7280', fontSize: 17, maxWidth: 520, margin: '0 auto' }}>
+          <p style={{ color: 'var(--c-body)', fontSize: 17, maxWidth: 520, margin: '0 auto' }}>
             Whether you're just starting or looking to level up — this course meets you where you are.
           </p>
         </div>
@@ -49,21 +49,21 @@ export default function AudienceSection() {
               <div style={{
                 width: 48, height: 48,
                 borderRadius: 12,
-                background: '#E8F7EE',
+                background: 'var(--c-accent-light)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: 22,
               }}>
                 {icon}
               </div>
               <div>
-                <h3 style={{ fontSize: 17, fontWeight: 700, color: '#1A1A1A', marginBottom: 8 }}>{title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.6 }}>{desc}</p>
+                <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--c-ink)', marginBottom: 8 }}>{title}</h3>
+                <p style={{ fontSize: 14, color: 'var(--c-body)', lineHeight: 1.6 }}>{desc}</p>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 'auto' }}>
                 {tags.map(t => (
                   <span key={t} style={{
-                    fontSize: 11.5, fontWeight: 600, color: '#047857',
-                    background: '#E8F7EE', padding: '3px 9px', borderRadius: 999,
+                    fontSize: 11.5, fontWeight: 600, color: 'var(--c-accent-text)',
+                    background: 'var(--c-accent-light)', padding: '3px 9px', borderRadius: 999,
                   }}>{t}</span>
                 ))}
               </div>

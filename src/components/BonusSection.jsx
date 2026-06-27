@@ -35,21 +35,21 @@ const bonuses = [
 ]
 
 const CheckIcon = () => (
-  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0ABF53" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 2 }}>
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 2 }}>
     <path d="M20 6L9 17l-5-5"/>
   </svg>
 )
 
 export default function BonusSection() {
   return (
-    <section className="section" style={{ background: '#F7F7F5', borderTop: '1px solid #E0E0DC' }}>
+    <section className="section" style={{ background: 'var(--c-surface-alt)', borderTop: '1px solid var(--c-border)' }}>
       <div className="section-wrap">
         <div style={{ textAlign: 'center', marginBottom: 52 }}>
           <span className="chip">What's Included</span>
           <h2 className="heading-2" style={{ marginBottom: 14 }}>
             Beyond just a course — a complete ecosystem
           </h2>
-          <p style={{ color: '#6B7280', fontSize: 17, maxWidth: 500, margin: '0 auto' }}>
+          <p style={{ color: 'var(--c-body)', fontSize: 17, maxWidth: 500, margin: '0 auto' }}>
             Every tool, every session, every connection you need to launch and grow your legal career.
           </p>
         </div>
@@ -63,19 +63,19 @@ export default function BonusSection() {
             <div key={title} className="feature-card">
               <div style={{
                 width: 52, height: 52, borderRadius: 14,
-                background: '#E8F7EE',
+                background: 'var(--c-accent-light)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: 24, marginBottom: 16,
               }}>
                 {icon}
               </div>
               <span className="chip-green" style={{ marginBottom: 10 }}>{chip}</span>
-              <h3 style={{ fontSize: 17, fontWeight: 700, color: '#1A1A1A', marginBottom: 16, lineHeight: 1.3 }}>{title}</h3>
+              <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--c-ink)', marginBottom: 16, lineHeight: 1.3 }}>{title}</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {items.map(item => (
                   <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 9 }}>
                     <CheckIcon />
-                    <span style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.5 }}>{item}</span>
+                    <span style={{ fontSize: 13.5, color: 'var(--c-body)', lineHeight: 1.5 }}>{item}</span>
                   </div>
                 ))}
               </div>

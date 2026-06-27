@@ -16,16 +16,16 @@ const doubled = [...logos, ...logos]
 export default function SocialProofBar() {
   return (
     <section style={{
-      background: '#F7F7F5',
-      borderTop: '1px solid #E0E0DC',
-      borderBottom: '1px solid #E0E0DC',
+      background: 'var(--c-surface-alt)',
+      borderTop: '1px solid var(--c-border)',
+      borderBottom: '1px solid var(--c-border)',
       padding: '48px 0',
     }}>
       <p style={{
         textAlign: 'center',
         fontSize: 13,
         fontWeight: 600,
-        color: '#9CA3AF',
+        color: 'var(--c-meta)',
         letterSpacing: '0.07em',
         textTransform: 'uppercase',
         marginBottom: 32,
@@ -40,15 +40,15 @@ export default function SocialProofBar() {
               key={i}
               style={{
                 ...logo.style,
-                color: '#B0B8C1',
+                color: 'var(--c-muted)',
                 fontFamily: "'Inter', sans-serif",
                 flexShrink: 0,
                 whiteSpace: 'nowrap',
                 transition: 'color 0.3s',
                 cursor: 'default',
               }}
-              onMouseEnter={e => e.currentTarget.style.color = '#374151'}
-              onMouseLeave={e => e.currentTarget.style.color = '#B0B8C1'}
+              onMouseEnter={e => e.currentTarget.style.color = 'var(--c-heading3)'}
+              onMouseLeave={e => e.currentTarget.style.color = 'var(--c-muted)'}
             >
               {logo.name}
             </span>

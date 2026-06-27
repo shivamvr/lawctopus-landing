@@ -10,7 +10,7 @@ const rotatingWords = [
 
 function StarIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="#F6A609">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--c-star)">
       <path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.6 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/>
     </svg>
   )
@@ -32,7 +32,7 @@ export default function HeroSection({ onDownload }) {
   }, [])
 
   return (
-    <section style={{ background: '#fff', paddingTop: 68 }}>
+    <section style={{ background: 'var(--c-white)', paddingTop: 68 }}>
       <div className="section-wrap" style={{ paddingTop: 80, paddingBottom: 80 }}>
         <div style={{
           display: 'grid',
@@ -48,8 +48,8 @@ export default function HeroSection({ onDownload }) {
               display: 'inline-flex',
               alignItems: 'center',
               gap: 10,
-              background: '#F7F7F5',
-              border: '1px solid #E0E0DC',
+              background: 'var(--c-surface-alt)',
+              border: '1px solid var(--c-border)',
               borderRadius: 999,
               padding: '6px 14px',
               marginBottom: 28,
@@ -57,7 +57,7 @@ export default function HeroSection({ onDownload }) {
               <div style={{ display: 'flex', gap: 2 }}>
                 {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
               </div>
-              <span style={{ fontSize: 13, fontWeight: 500, color: '#374151' }}>
+              <span style={{ fontSize: 13, fontWeight: 500, color: 'var(--c-heading3)' }}>
                 Rated 4.8/5 by 1,000+ students
               </span>
             </div>
@@ -68,7 +68,7 @@ export default function HeroSection({ onDownload }) {
               fontWeight: 700,
               lineHeight: 1.07,
               letterSpacing: '-0.03em',
-              color: '#1A1A1A',
+              color: 'var(--c-ink)',
               marginBottom: 24,
             }}>
               Master{' '}
@@ -81,7 +81,7 @@ export default function HeroSection({ onDownload }) {
                   key={wordIdx}
                   style={{
                     display: 'inline-block',
-                    color: '#0ABF53',
+                    color: 'var(--c-accent)',
                     animation: visible ? 'word-in 350ms ease forwards' : 'none',
                     opacity: visible ? undefined : 0,
                   }}
@@ -96,7 +96,7 @@ export default function HeroSection({ onDownload }) {
             <p style={{
               fontSize: 18,
               lineHeight: 1.65,
-              color: '#6B7280',
+              color: 'var(--c-body)',
               maxWidth: 480,
               marginBottom: 36,
             }}>
@@ -113,10 +113,10 @@ export default function HeroSection({ onDownload }) {
               ].map(({ icon, text }) => (
                 <div key={text} style={{
                   display: 'flex', alignItems: 'center', gap: 6,
-                  background: '#F7F7F5',
-                  border: '1px solid #E0E0DC',
+                  background: 'var(--c-surface-alt)',
+                  border: '1px solid var(--c-border)',
                   borderRadius: 8, padding: '7px 12px',
-                  fontSize: 13.5, fontWeight: 500, color: '#374151',
+                  fontSize: 13.5, fontWeight: 500, color: 'var(--c-heading3)',
                 }}>
                   <span>{icon}</span> {text}
                 </div>
@@ -143,7 +143,7 @@ export default function HeroSection({ onDownload }) {
               </button>
             </div>
 
-            <p style={{ fontSize: 12.5, color: '#9CA3AF', marginTop: 14 }}>
+            <p style={{ fontSize: 12.5, color: 'var(--c-meta)', marginTop: 14 }}>
               Next batch starts 1 July 2026 · Limited seats
             </p>
           </div>
@@ -154,7 +154,7 @@ export default function HeroSection({ onDownload }) {
               borderRadius: 24,
               overflow: 'hidden',
               boxShadow: '0 24px 64px rgba(0,0,0,0.13)',
-              border: '1px solid #E0E0DC',
+              border: '1px solid var(--c-border)',
             }}>
               <img
                 src={heroImg}
@@ -169,15 +169,15 @@ export default function HeroSection({ onDownload }) {
               position: 'absolute',
               bottom: -20,
               left: -24,
-              background: '#fff',
-              border: '1px solid #E0E0DC',
+              background: 'var(--c-white)',
+              border: '1px solid var(--c-border)',
               borderRadius: 14,
               padding: '14px 18px',
               boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
               minWidth: 180,
             }}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#044D40', lineHeight: 1 }}>20,000+</div>
-              <div style={{ fontSize: 12.5, color: '#6B7280', fontWeight: 500, marginTop: 4 }}>Legal professionals in community</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: 'var(--c-forest)', lineHeight: 1 }}>20,000+</div>
+              <div style={{ fontSize: 12.5, color: 'var(--c-body)', fontWeight: 500, marginTop: 4 }}>Legal professionals in community</div>
             </div>
 
             {/* Floating batch pill */}
@@ -185,13 +185,13 @@ export default function HeroSection({ onDownload }) {
               position: 'absolute',
               top: -14,
               right: -12,
-              background: '#044D40',
-              color: '#fff',
+              background: 'var(--c-forest)',
+              color: 'var(--c-white)',
               borderRadius: 999,
               padding: '8px 16px',
               fontSize: 12.5,
               fontWeight: 700,
-              boxShadow: '0 4px 16px rgba(4,77,64,0.35)',
+              boxShadow: '0 4px 16px var(--c-forest-35)',
               whiteSpace: 'nowrap',
             }}>
               🔥 Batch starts July 1
@@ -201,7 +201,7 @@ export default function HeroSection({ onDownload }) {
       </div>
 
       {/* Seats banner */}
-      <div style={{ background: '#F7F7F5', borderTop: '1px solid #E0E0DC', borderBottom: '1px solid #E0E0DC' }}>
+      <div style={{ background: 'var(--c-surface-alt)', borderTop: '1px solid var(--c-border)', borderBottom: '1px solid var(--c-border)' }}>
         <div className="section-wrap">
           <div style={{
             display: 'flex', alignItems: 'center',
@@ -211,8 +211,8 @@ export default function HeroSection({ onDownload }) {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
               <span style={{
-                background: '#0ABF53',
-                color: '#fff',
+                background: 'var(--c-accent)',
+                color: 'var(--c-white)',
                 fontSize: 11,
                 fontWeight: 700,
                 padding: '4px 10px',
@@ -222,7 +222,7 @@ export default function HeroSection({ onDownload }) {
               }}>
                 Limited Seats
               </span>
-              <span style={{ fontSize: 14.5, fontWeight: 600, color: '#374151' }}>
+              <span style={{ fontSize: 14.5, fontWeight: 600, color: 'var(--c-heading3)' }}>
                 Next Batch Starts 1st July 2026
               </span>
             </div>

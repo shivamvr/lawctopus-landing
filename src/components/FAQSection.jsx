@@ -13,12 +13,12 @@ const faqs = [
 function FAQItem({ item, isOpen, onToggle }) {
   return (
     <div style={{
-      background: '#fff',
-      border: isOpen ? '1.5px solid #0ABF53' : '1px solid #E0E0DC',
+      background: 'var(--c-white)',
+      border: isOpen ? '1.5px solid var(--c-accent)' : '1px solid var(--c-border)',
       borderRadius: 12,
       overflow: 'hidden',
       marginBottom: 8,
-      boxShadow: isOpen ? '0 4px 16px rgba(10,191,83,0.08)' : 'none',
+      boxShadow: isOpen ? '0 4px 16px var(--c-accent-08)' : 'none',
       transition: 'border-color 0.2s, box-shadow 0.2s',
     }}>
       <button
@@ -31,13 +31,13 @@ function FAQItem({ item, isOpen, onToggle }) {
           fontFamily: 'inherit',
         }}
       >
-        <span style={{ fontWeight: isOpen ? 700 : 500, fontSize: 15, color: isOpen ? '#044D40' : '#1A1A1A', lineHeight: 1.4 }}>
+        <span style={{ fontWeight: isOpen ? 700 : 500, fontSize: 15, color: isOpen ? 'var(--c-forest)' : 'var(--c-ink)', lineHeight: 1.4 }}>
           {item.q}
         </span>
         <span style={{
           width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
-          background: isOpen ? '#044D40' : '#F0F0EC',
-          color: isOpen ? '#fff' : '#6B7280',
+          background: isOpen ? 'var(--c-forest)' : 'var(--c-surface-fill)',
+          color: isOpen ? 'var(--c-white)' : 'var(--c-body)',
           display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
           transition: 'background 0.2s',
         }}>
@@ -48,8 +48,8 @@ function FAQItem({ item, isOpen, onToggle }) {
         </span>
       </button>
       {isOpen && (
-        <div style={{ padding: '0 22px 18px', borderTop: '1px solid #F0F0EC' }}>
-          <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.7, paddingTop: 14 }}>{item.a}</p>
+        <div style={{ padding: '0 22px 18px', borderTop: '1px solid var(--c-surface-fill)' }}>
+          <p style={{ color: 'var(--c-body)', fontSize: 14.5, lineHeight: 1.7, paddingTop: 14 }}>{item.a}</p>
         </div>
       )}
     </div>
@@ -60,12 +60,12 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null)
 
   return (
-    <section id="faq" className="section" style={{ background: '#F7F7F5', borderTop: '1px solid #E0E0DC' }}>
+    <section id="faq" className="section" style={{ background: 'var(--c-surface-alt)', borderTop: '1px solid var(--c-border)' }}>
       <div className="section-wrap" style={{ maxWidth: 780, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 44 }}>
           <span className="chip">FAQ</span>
           <h2 className="heading-2" style={{ marginBottom: 12 }}>Frequently Asked Questions</h2>
-          <p style={{ color: '#6B7280', fontSize: 16 }}>Everything you need to know before enrolling</p>
+          <p style={{ color: 'var(--c-body)', fontSize: 16 }}>Everything you need to know before enrolling</p>
         </div>
 
         <div>

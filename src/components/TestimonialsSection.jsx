@@ -47,7 +47,7 @@ function StarRow() {
   return (
     <div style={{ display: 'flex', gap: 3 }}>
       {[...Array(5)].map((_, i) => (
-        <svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="#F6A609">
+        <svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="var(--c-star)">
           <path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.6 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/>
         </svg>
       ))}
@@ -57,12 +57,12 @@ function StarRow() {
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="section" style={{ background: '#F7F7F5', borderTop: '1px solid #E0E0DC' }}>
+    <section id="testimonials" className="section" style={{ background: 'var(--c-surface-alt)', borderTop: '1px solid var(--c-border)' }}>
       <div className="section-wrap">
         <div style={{ textAlign: 'center', marginBottom: 52 }}>
           <span className="chip">Student Stories</span>
           <h2 className="heading-2" style={{ marginBottom: 14 }}>Real stories, real results</h2>
-          <p style={{ color: '#6B7280', fontSize: 17, maxWidth: 480, margin: '0 auto' }}>
+          <p style={{ color: 'var(--c-body)', fontSize: 17, maxWidth: 480, margin: '0 auto' }}>
             Join 20,000+ legal professionals who've already transformed their careers.
           </p>
         </div>
@@ -76,8 +76,8 @@ export default function TestimonialsSection() {
             <div
               key={name}
               style={{
-                background: '#fff',
-                border: '1px solid #E0E0DC',
+                background: 'var(--c-white)',
+                border: '1px solid var(--c-border)',
                 borderRadius: 16,
                 overflow: 'hidden',
                 display: 'flex',
@@ -89,14 +89,14 @@ export default function TestimonialsSection() {
               onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)' }}
             >
               {/* Top color stripe */}
-              <div style={{ height: 4, background: '#0ABF53' }} />
+              <div style={{ height: 4, background: 'var(--c-accent)' }} />
 
               <div style={{ padding: '22px 24px 24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                 {/* Tag + stars */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
                   <span style={{
-                    fontSize: 11, fontWeight: 700, color: '#047857',
-                    background: '#E8F7EE', padding: '3px 9px', borderRadius: 999,
+                    fontSize: 11, fontWeight: 700, color: 'var(--c-accent-text)',
+                    background: 'var(--c-accent-light)', padding: '3px 9px', borderRadius: 999,
                     textTransform: 'uppercase', letterSpacing: '0.06em',
                   }}>
                     {tag}
@@ -107,7 +107,7 @@ export default function TestimonialsSection() {
                 {/* Quote */}
                 <p style={{
                   fontSize: 14,
-                  color: '#374151',
+                  color: 'var(--c-heading3)',
                   lineHeight: 1.7,
                   flex: 1,
                   marginBottom: 20,
@@ -116,20 +116,20 @@ export default function TestimonialsSection() {
                 </p>
 
                 {/* Author */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10, borderTop: '1px solid #F0F0EC', paddingTop: 16 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, borderTop: '1px solid var(--c-surface-fill)', paddingTop: 16 }}>
                   <div style={{
                     width: 38, height: 38,
                     borderRadius: '50%',
-                    background: '#044D40',
+                    background: 'var(--c-forest)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: 13, fontWeight: 700, color: '#fff',
+                    fontSize: 13, fontWeight: 700, color: 'var(--c-white)',
                     flexShrink: 0,
                   }}>
                     {initials}
                   </div>
                   <div>
-                    <div style={{ fontSize: 13.5, fontWeight: 700, color: '#1A1A1A' }}>{name}</div>
-                    <div style={{ fontSize: 12, color: '#9CA3AF' }}>{org}</div>
+                    <div style={{ fontSize: 13.5, fontWeight: 700, color: 'var(--c-ink)' }}>{name}</div>
+                    <div style={{ fontSize: 12, color: 'var(--c-meta)' }}>{org}</div>
                   </div>
                 </div>
               </div>

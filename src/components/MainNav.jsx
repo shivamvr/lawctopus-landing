@@ -26,7 +26,7 @@ export default function MainNav({ onDownload }) {
         top: 0, left: 0, right: 0,
         zIndex: 100,
         height: 68,
-        background: '#fff',
+        background: 'var(--c-white)',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
         boxShadow: scrolled ? '0 1px 0 0 rgba(0,0,0,0.08)' : 'none',
         transition: 'box-shadow 0.2s ease',
@@ -46,14 +46,14 @@ export default function MainNav({ onDownload }) {
                 key={href}
                 href={href}
                 style={{
-                  color: '#1A1A1A',
+                  color: 'var(--c-ink)',
                   textDecoration: 'none',
                   fontSize: 15,
                   fontWeight: 500,
                   transition: 'color 0.15s',
                 }}
-                onMouseEnter={e => e.currentTarget.style.color = '#0ABF53'}
-                onMouseLeave={e => e.currentTarget.style.color = '#1A1A1A'}
+                onMouseEnter={e => e.currentTarget.style.color = 'var(--c-accent)'}
+                onMouseLeave={e => e.currentTarget.style.color = 'var(--c-ink)'}
               >
                 {label}
               </a>
@@ -66,8 +66,8 @@ export default function MainNav({ onDownload }) {
               onClick={onDownload}
               style={{
                 background: 'transparent',
-                border: '1.5px solid #E0E0DC',
-                color: '#1A1A1A',
+                border: '1.5px solid var(--c-border)',
+                color: 'var(--c-ink)',
                 padding: '9px 18px',
                 borderRadius: 8,
                 fontWeight: 600,
@@ -76,8 +76,8 @@ export default function MainNav({ onDownload }) {
                 fontFamily: 'inherit',
                 transition: 'border-color 0.2s, background 0.2s',
               }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = '#1A1A1A'; e.currentTarget.style.background = '#F7F7F5' }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = '#E0E0DC'; e.currentTarget.style.background = 'transparent' }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--c-ink)'; e.currentTarget.style.background = 'var(--c-surface-alt)' }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--c-border)'; e.currentTarget.style.background = 'transparent' }}
             >
               Download Syllabus
             </button>
@@ -103,8 +103,8 @@ export default function MainNav({ onDownload }) {
               width: 40, height: 40,
               borderRadius: 8,
               background: 'transparent',
-              border: '1.5px solid #E0E0DC',
-              color: '#1A1A1A',
+              border: '1.5px solid var(--c-border)',
+              color: 'var(--c-ink)',
               cursor: 'pointer',
             }}
             aria-label="Toggle menu"
@@ -123,8 +123,8 @@ export default function MainNav({ onDownload }) {
           position: 'fixed',
           top: 68, left: 0, right: 0,
           zIndex: 99,
-          background: '#fff',
-          borderBottom: '1px solid #E0E0DC',
+          background: 'var(--c-white)',
+          borderBottom: '1px solid var(--c-border)',
           padding: '12px 20px 20px',
           boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
         }}>
@@ -135,12 +135,12 @@ export default function MainNav({ onDownload }) {
               onClick={() => setMenuOpen(false)}
               style={{
                 display: 'block',
-                color: '#1A1A1A',
+                color: 'var(--c-ink)',
                 textDecoration: 'none',
                 fontSize: 16,
                 fontWeight: 600,
                 padding: '13px 0',
-                borderBottom: '1px solid #F0F0EC',
+                borderBottom: '1px solid var(--c-surface-fill)',
               }}
             >
               {label}
@@ -151,8 +151,8 @@ export default function MainNav({ onDownload }) {
               onClick={() => { onDownload(); setMenuOpen(false) }}
               style={{
                 flex: 1, background: 'transparent',
-                border: '1.5px solid #E0E0DC',
-                color: '#1A1A1A', padding: '12px',
+                border: '1.5px solid var(--c-border)',
+                color: 'var(--c-ink)', padding: '12px',
                 borderRadius: 8, fontWeight: 600,
                 fontSize: 14, cursor: 'pointer', fontFamily: 'inherit',
               }}
@@ -165,7 +165,7 @@ export default function MainNav({ onDownload }) {
               rel="noopener noreferrer"
               style={{
                 flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center',
-                background: '#0ABF53', color: '#fff',
+                background: 'var(--c-accent)', color: 'var(--c-white)',
                 padding: '12px', borderRadius: 8,
                 fontWeight: 600, fontSize: 14,
                 textDecoration: 'none', fontFamily: 'inherit',

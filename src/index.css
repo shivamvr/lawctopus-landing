@@ -1,20 +1,8 @@
 @import "tailwindcss";
 
+/* Colours are NOT defined here — they live in src/theme.js and are injected
+   onto :root as --c-* variables by main.jsx. This file only consumes them. */
 @theme {
-  --color-forest:      #044D40;
-  --color-green:       #0ABF53;
-  --color-green-mid:   #0CC45A;
-  --color-green-dark:  #09AA4A;
-  --color-green-light: #E8F7EE;
-  --color-black:       #1A1A1A;
-  --color-dark:        #0C0C0C;
-  --color-white:       #FFFFFF;
-  --color-gray-50:     #F7F7F5;
-  --color-gray-100:    #F0F0EC;
-  --color-gray-200:    #E0E0DC;
-  --color-gray-400:    #9CA3AF;
-  --color-gray-600:    #6B7280;
-  --color-gray-800:    #374151;
   --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 }
@@ -23,8 +11,8 @@
 
 body {
   font-family: var(--font-sans);
-  background: #fff;
-  color: #1A1A1A;
+  background: var(--c-white);
+  color: var(--c-ink);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -51,8 +39,8 @@ html { scroll-behavior: smooth; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #0ABF53;
-  color: #fff;
+  background: var(--c-accent);
+  color: var(--c-white);
   font-size: 16px;
   font-weight: 600;
   padding: 14px 24px;
@@ -64,19 +52,19 @@ html { scroll-behavior: smooth; }
   white-space: nowrap;
   transition: background 0.2s ease, transform 0.15s ease;
 }
-.btn-primary:hover { background: #0CC45A; transform: translateY(-1px); }
-.btn-primary:active { background: #09AA4A; transform: translateY(0); }
+.btn-primary:hover { background: var(--c-accent-hover); transform: translateY(-1px); }
+.btn-primary:active { background: var(--c-accent-active); transform: translateY(0); }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: #1A1A1A;
+  color: var(--c-ink);
   font-size: 16px;
   font-weight: 600;
   padding: 13px 23px;
-  border: 1.5px solid #E0E0DC;
+  border: 1.5px solid var(--c-border);
   border-radius: 8px;
   cursor: pointer;
   font-family: inherit;
@@ -84,14 +72,14 @@ html { scroll-behavior: smooth; }
   white-space: nowrap;
   transition: border-color 0.2s, background 0.2s;
 }
-.btn-secondary:hover { border-color: #1A1A1A; background: #F7F7F5; }
+.btn-secondary:hover { border-color: var(--c-ink); background: var(--c-surface-alt); }
 
 .btn-ghost-dark {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: #fff;
+  color: var(--c-white);
   border: 2px solid rgba(255,255,255,0.4);
   padding: 13px 23px;
   border-radius: 8px;
@@ -112,13 +100,13 @@ html { scroll-behavior: smooth; }
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #6B7280;
+  color: var(--c-body);
   margin-bottom: 12px;
 }
 .chip-green {
   display: inline-block;
-  background: #E8F7EE;
-  color: #047857;
+  background: var(--c-accent-light);
+  color: var(--c-accent-text);
   padding: 4px 12px;
   border-radius: 999px;
   font-size: 11px;
@@ -129,8 +117,8 @@ html { scroll-behavior: smooth; }
 }
 .badge-new {
   display: inline-block;
-  background: #0ABF53;
-  color: #fff;
+  background: var(--c-accent);
+  color: var(--c-white);
   font-size: 11px;
   font-weight: 700;
   padding: 3px 8px;
@@ -145,20 +133,20 @@ html { scroll-behavior: smooth; }
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #1A1A1A;
+  color: var(--c-ink);
 }
 .heading-3 {
   font-size: clamp(20px, 2vw, 28px);
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.01em;
-  color: #1A1A1A;
+  color: var(--c-ink);
 }
 
 /* ── Cards ── */
 .feature-card {
-  background: #fff;
-  border: 1px solid #E0E0DC;
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
   border-radius: 16px;
   padding: 28px;
   transition: box-shadow 0.25s ease, transform 0.25s ease;
@@ -195,7 +183,7 @@ html { scroll-behavior: smooth; }
 /* ── Tabs (pill style) ── */
 .tab-group {
   display: inline-flex;
-  background: #F0F0EC;
+  background: var(--c-surface-fill);
   border-radius: 999px;
   padding: 4px;
   gap: 2px;
@@ -205,7 +193,7 @@ html { scroll-behavior: smooth; }
   border-radius: 999px;
   font-size: 14px;
   font-weight: 500;
-  color: #6B7280;
+  color: var(--c-body);
   cursor: pointer;
   border: none;
   background: transparent;
@@ -214,8 +202,8 @@ html { scroll-behavior: smooth; }
   white-space: nowrap;
 }
 .tab-item.active {
-  background: #fff;
-  color: #1A1A1A;
+  background: var(--c-white);
+  color: var(--c-ink);
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
@@ -242,14 +230,14 @@ html { scroll-behavior: smooth; }
   cursor: pointer;
   border: none;
   font-family: inherit;
-  background: #F0F0EC;
-  color: #374151;
+  background: var(--c-surface-fill);
+  color: var(--c-heading3);
   transition: background 0.2s, color 0.2s;
   flex-shrink: 0;
 }
 .pill-tab.active {
-  background: #044D40;
-  color: #fff;
+  background: var(--c-forest);
+  color: var(--c-white);
 }
 
 /* ── Shadow scale ── */
@@ -260,5 +248,5 @@ html { scroll-behavior: smooth; }
 .shadow-2xl { box-shadow: 0 24px 64px rgba(0,0,0,0.14); }
 
 /* ── Focus visible ── */
-:focus-visible { outline: 2px solid #0ABF53; outline-offset: 2px; }
-input:focus { outline: none; border-color: #0ABF53 !important; }
+:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+input:focus { outline: none; border-color: var(--c-accent) !important; }

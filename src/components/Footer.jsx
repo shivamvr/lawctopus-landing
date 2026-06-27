@@ -37,7 +37,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#044D40', color: 'rgba(255,255,255,0.7)', padding: '72px 0 0' }}>
+    <footer style={{ background: 'var(--c-forest)', color: 'rgba(255,255,255,0.7)', padding: '72px 0 0' }}>
       <div className="section-wrap">
         {/* Top: logo + social */}
         <div style={{
@@ -73,7 +73,7 @@ export default function Footer() {
                   textDecoration: 'none',
                   transition: 'background 0.2s, color 0.2s',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.2)'; e.currentTarget.style.color = '#fff' }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.2)'; e.currentTarget.style.color = 'var(--c-white)' }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)' }}
               >
                 {icon}
@@ -113,7 +113,7 @@ export default function Footer() {
                       lineHeight: 2,
                       transition: 'color 0.15s',
                     }}
-                    onMouseEnter={e => e.currentTarget.style.color = '#fff'}
+                    onMouseEnter={e => e.currentTarget.style.color = 'var(--c-white)'}
                     onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.62)'}
                   >
                     {link}

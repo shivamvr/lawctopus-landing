@@ -1,11 +1,11 @@
 export default function FinalCTA({ onDownload }) {
   return (
-    <section style={{ background: '#044D40', padding: '96px 0' }}>
+    <section style={{ background: 'var(--c-forest)', padding: '96px 0' }}>
       <div className="section-wrap" style={{ textAlign: 'center' }}>
         <h2 style={{
           fontSize: 'clamp(28px,3.5vw,44px)',
           fontWeight: 700,
-          color: '#fff',
+          color: 'var(--c-white)',
           letterSpacing: '-0.02em',
           lineHeight: 1.15,
           marginBottom: 16,

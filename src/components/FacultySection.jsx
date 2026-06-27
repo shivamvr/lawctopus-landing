@@ -17,14 +17,14 @@ function LinkedInIcon() {
 
 export default function FacultySection() {
   return (
-    <section id="instructors" style={{ background: '#044D40', padding: '96px 0' }}>
+    <section id="instructors" style={{ background: 'var(--c-forest)', padding: '96px 0' }}>
       <div className="section-wrap">
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 52 }}>
           <span style={{
             display: 'inline-block',
-            background: 'rgba(10,191,83,0.2)',
-            color: '#0ABF53',
+            background: 'var(--c-accent-20)',
+            color: 'var(--c-accent)',
             fontSize: 11,
             fontWeight: 700,
             letterSpacing: '0.08em',
@@ -38,7 +38,7 @@ export default function FacultySection() {
           <h2 style={{
             fontSize: 'clamp(28px,3.5vw,44px)',
             fontWeight: 700,
-            color: '#fff',
+            color: 'var(--c-white)',
             letterSpacing: '-0.02em',
             lineHeight: 1.15,
             marginBottom: 14,
@@ -73,16 +73,16 @@ export default function FacultySection() {
                 <div style={{
                   width: 52, height: 52,
                   borderRadius: '50%',
-                  background: '#0ABF53',
+                  background: 'var(--c-accent)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 16, fontWeight: 800, color: '#fff',
+                  fontSize: 16, fontWeight: 800, color: 'var(--c-white)',
                   flexShrink: 0,
                 }}>
                   {initials}
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: 15, fontWeight: 700, color: '#fff' }}>{name}</span>
+                    <span style={{ fontSize: 15, fontWeight: 700, color: 'var(--c-white)' }}>{name}</span>
                     {isNew && <span className="badge-new">New</span>}
                   </div>
                   <div style={{ fontSize: 12.5, color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>{role}</div>
@@ -99,7 +99,7 @@ export default function FacultySection() {
                 rel="noopener noreferrer"
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: 6,
-                  color: '#0ABF53', fontSize: 13, fontWeight: 600,
+                  color: 'var(--c-accent)', fontSize: 13, fontWeight: 600,
                   textDecoration: 'none',
                 }}
                 onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'}
@@ -125,7 +125,7 @@ export default function FacultySection() {
             { value: '100%', label: 'Practicing Lawyers' },
           ].map(({ value, label }) => (
             <div key={label} style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: 32, fontWeight: 800, color: '#0ABF53', lineHeight: 1 }}>{value}</div>
+              <div style={{ fontSize: 32, fontWeight: 800, color: 'var(--c-accent)', lineHeight: 1 }}>{value}</div>
               <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', marginTop: 6 }}>{label}</div>
             </div>
           ))}

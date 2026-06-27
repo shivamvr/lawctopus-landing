@@ -75,7 +75,7 @@ const modules = [
 ]
 
 const CheckIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0ABF53" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
     <path d="M20 6L9 17l-5-5"/>
   </svg>
 )
@@ -85,13 +85,13 @@ export default function CurriculumSection() {
   const mod = modules[active]
 
   return (
-    <section id="curriculum" className="section" style={{ background: '#fff', borderTop: '1px solid #E0E0DC' }}>
+    <section id="curriculum" className="section" style={{ background: 'var(--c-white)', borderTop: '1px solid var(--c-border)' }}>
       <div className="section-wrap">
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <span className="chip">Program Curriculum</span>
           <h2 className="heading-2" style={{ marginBottom: 12 }}>What you'll learn</h2>
-          <p style={{ color: '#6B7280', fontSize: 16 }}>
+          <p style={{ color: 'var(--c-body)', fontSize: 16 }}>
             6 months · 55 live sessions · 83 recorded lectures · 17 assignments
           </p>
         </div>
@@ -120,16 +120,16 @@ export default function CurriculumSection() {
 
           {/* Left: module details */}
           <div style={{
-            background: '#fff',
-            border: '1px solid #E0E0DC',
+            background: 'var(--c-white)',
+            border: '1px solid var(--c-border)',
             borderRadius: 16,
             padding: '28px 32px',
             boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 18 }}>
               <span style={{
-                background: '#044D40',
-                color: '#fff',
+                background: 'var(--c-forest)',
+                color: 'var(--c-white)',
                 fontSize: 11,
                 fontWeight: 700,
                 padding: '4px 10px',
@@ -138,10 +138,10 @@ export default function CurriculumSection() {
               }}>
                 {mod.badge}
               </span>
-              <span style={{ fontSize: 12.5, color: '#9CA3AF', fontWeight: 500 }}>{mod.sessions}</span>
+              <span style={{ fontSize: 12.5, color: 'var(--c-meta)', fontWeight: 500 }}>{mod.sessions}</span>
             </div>
 
-            <h3 style={{ fontSize: 20, fontWeight: 700, color: '#1A1A1A', marginBottom: 20, lineHeight: 1.3 }}>
+            <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--c-ink)', marginBottom: 20, lineHeight: 1.3 }}>
               {mod.title}
             </h3>
 
@@ -149,7 +149,7 @@ export default function CurriculumSection() {
               {mod.items.map(item => (
                 <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
                   <CheckIcon />
-                  <span style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.5 }}>{item}</span>
+                  <span style={{ fontSize: 14.5, color: 'var(--c-heading3)', lineHeight: 1.5 }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -157,10 +157,10 @@ export default function CurriculumSection() {
 
           {/* Right: course highlights */}
           <div style={{
-            background: 'linear-gradient(160deg, #044D40 0%, #033830 100%)',
+            background: 'linear-gradient(160deg, var(--c-forest) 0%, var(--c-forest-dark) 100%)',
             borderRadius: 16,
             padding: '28px 24px',
-            color: '#fff',
+            color: 'var(--c-white)',
           }}>
             <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: 20 }}>
               Program Highlights
@@ -181,7 +181,7 @@ export default function CurriculumSection() {
                 borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
               }}>
                 <span style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.72)' }}>{label}</span>
-                <span style={{ fontSize: 18, fontWeight: 800, color: '#0ABF53' }}>{value}</span>
+                <span style={{ fontSize: 18, fontWeight: 800, color: 'var(--c-accent)' }}>{value}</span>
               </div>
             ))}
 

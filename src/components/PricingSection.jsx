@@ -58,14 +58,14 @@ export default function PricingSection({ onDownload }) {
   const [active, setActive] = useState('pro')
 
   return (
-    <section id="pricing" className="section" style={{ background: '#fff', borderTop: '1px solid #E0E0DC' }}>
+    <section id="pricing" className="section" style={{ background: 'var(--c-white)', borderTop: '1px solid var(--c-border)' }}>
       <div className="section-wrap">
         <div style={{ textAlign: 'center', marginBottom: 44 }}>
           <span className="chip">Pricing</span>
           <h2 className="heading-2" style={{ marginBottom: 12 }}>
             Built for every budget &amp; timeline
           </h2>
-          <p style={{ color: '#6B7280', fontSize: 16, maxWidth: 460, margin: '0 auto 28px' }}>
+          <p style={{ color: 'var(--c-body)', fontSize: 16, maxWidth: 460, margin: '0 auto 28px' }}>
             Start with foundations or go all-in — both paths lead to real skills.
           </p>
 
@@ -97,22 +97,22 @@ export default function PricingSection({ onDownload }) {
               <div
                 key={plan.id}
                 style={{
-                  border: plan.highlight ? '2px solid #0ABF53' : '1px solid #E0E0DC',
+                  border: plan.highlight ? '2px solid var(--c-accent)' : '1px solid var(--c-border)',
                   borderRadius: 20,
                   padding: '32px',
-                  background: '#fff',
+                  background: 'var(--c-white)',
                   position: 'relative',
                   opacity: isActive ? 1 : 0.55,
                   transform: isActive ? 'scale(1.02)' : 'scale(0.98)',
                   transition: 'all 0.3s ease',
-                  boxShadow: plan.highlight && isActive ? '0 16px 48px rgba(10,191,83,0.15)' : 'none',
+                  boxShadow: plan.highlight && isActive ? '0 16px 48px var(--c-accent-15)' : 'none',
                 }}
               >
                 {plan.highlight && (
                   <div style={{
                     position: 'absolute', top: -14, left: '50%',
                     transform: 'translateX(-50%)',
-                    background: '#0ABF53', color: '#fff',
+                    background: 'var(--c-accent)', color: 'var(--c-white)',
                     fontSize: 12, fontWeight: 700,
                     padding: '5px 16px', borderRadius: 999,
                     whiteSpace: 'nowrap',
@@ -123,22 +123,22 @@ export default function PricingSection({ onDownload }) {
 
                 <div style={{ marginBottom: 24 }}>
                   <span className="chip-green" style={{ marginBottom: 8 }}>{plan.label}</span>
-                  <h3 style={{ fontSize: 22, fontWeight: 800, color: '#1A1A1A', marginBottom: 4 }}>{plan.name}</h3>
-                  <p style={{ fontSize: 13.5, color: '#9CA3AF' }}>{plan.tagline}</p>
+                  <h3 style={{ fontSize: 22, fontWeight: 800, color: 'var(--c-ink)', marginBottom: 4 }}>{plan.name}</h3>
+                  <p style={{ fontSize: 13.5, color: 'var(--c-meta)' }}>{plan.tagline}</p>
                 </div>
 
                 <div style={{ marginBottom: 28 }}>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-                    <span style={{ fontSize: 38, fontWeight: 800, color: '#1A1A1A', letterSpacing: '-1px' }}>{plan.price}</span>
-                    <span style={{ fontSize: 16, color: '#B0B8C1', textDecoration: 'line-through' }}>{plan.original}</span>
+                    <span style={{ fontSize: 38, fontWeight: 800, color: 'var(--c-ink)', letterSpacing: '-1px' }}>{plan.price}</span>
+                    <span style={{ fontSize: 16, color: 'var(--c-muted)', textDecoration: 'line-through' }}>{plan.original}</span>
                   </div>
-                  <p style={{ fontSize: 12.5, color: '#9CA3AF', marginTop: 4 }}>One-time fee · All taxes included</p>
+                  <p style={{ fontSize: 12.5, color: 'var(--c-meta)', marginTop: 4 }}>One-time fee · All taxes included</p>
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
                   {plan.features.map(f => (
-                    <div key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 9, color: '#374151' }}>
-                      <span style={{ color: '#0ABF53', marginTop: 1 }}><CheckIcon /></span>
+                    <div key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 9, color: 'var(--c-heading3)' }}>
+                      <span style={{ color: 'var(--c-accent)', marginTop: 1 }}><CheckIcon /></span>
                       <span style={{ fontSize: 14 }}>{f}</span>
                     </div>
                   ))}
@@ -151,9 +151,9 @@ export default function PricingSection({ onDownload }) {
                   style={{
                     display: 'flex', justifyContent: 'center', alignItems: 'center',
                     width: '100%', padding: '14px',
-                    background: plan.highlight ? '#0ABF53' : 'transparent',
-                    color: plan.highlight ? '#fff' : '#1A1A1A',
-                    border: plan.highlight ? 'none' : '1.5px solid #E0E0DC',
+                    background: plan.highlight ? 'var(--c-accent)' : 'transparent',
+                    color: plan.highlight ? 'var(--c-white)' : 'var(--c-ink)',
+                    border: plan.highlight ? 'none' : '1.5px solid var(--c-border)',
                     borderRadius: 8,
                     fontWeight: 700, fontSize: 15,
                     textDecoration: 'none',
@@ -168,7 +168,7 @@ export default function PricingSection({ onDownload }) {
                   style={{
                     display: 'flex', justifyContent: 'center', alignItems: 'center',
                     width: '100%', padding: '12px',
-                    background: 'transparent', color: '#6B7280',
+                    background: 'transparent', color: 'var(--c-body)',
                     border: 'none', cursor: 'pointer',
                     fontFamily: 'inherit', fontSize: 13.5, fontWeight: 500,
                     textDecoration: 'underline',
@@ -181,7 +181,7 @@ export default function PricingSection({ onDownload }) {
           })}
         </div>
 
-        <p style={{ textAlign: 'center', fontSize: 13, color: '#9CA3AF', marginTop: 24 }}>
+        <p style={{ textAlign: 'center', fontSize: 13, color: 'var(--c-meta)', marginTop: 24 }}>
           No credit card required to download syllabus · EMI options available
         </p>
       </div>
