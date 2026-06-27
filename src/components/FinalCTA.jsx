@@ -30,7 +30,7 @@ export default function FinalCTA({ onDownload }) {
             className="btn-primary"
             style={{ fontSize: 16, padding: '15px 32px' }}
           >
-            Enroll Now — ₹24,999
+            Enroll Now
           </a>
           <button
             onClick={onDownload}

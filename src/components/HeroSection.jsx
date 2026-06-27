@@ -132,7 +132,7 @@ export default function HeroSection({ onDownload }) {
                 className="btn-primary"
                 style={{ fontSize: 16, padding: '15px 28px' }}
               >
-                Enroll Now — ₹24,999
+                Enroll Now
               </a>
               <button
                 onClick={onDownload}

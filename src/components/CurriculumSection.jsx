@@ -192,7 +192,7 @@ export default function CurriculumSection() {
               className="btn-primary"
               style={{ width: '100%', justifyContent: 'center', marginTop: 20, fontSize: 16 }}
             >
-              Enroll Now — ₹24,999
+              Enroll Now
             </a>
           </div>
         </div>
