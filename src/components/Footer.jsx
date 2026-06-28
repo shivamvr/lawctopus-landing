@@ -1,4 +1,4 @@
-import { LawctopusWordmark } from './Logo'
+import logo from '../assets/lawctopus-logo.webp'
 
 const cols = [
   {
@@ -51,7 +51,7 @@ export default function Footer() {
           borderBottom: '1px solid rgba(255,255,255,0.1)',
         }}>
           <div>
-            <LawctopusWordmark onDark fontSize={22} tagline />
+            <img src={logo} alt="Lawctopus — The Home of Legal Careers" style={{ height: 56, width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }} />
             <p style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.5)', marginTop: 14, maxWidth: 260, lineHeight: 1.6 }}>
               India's leading platform for legal career development — from students to senior associates.
             </p>

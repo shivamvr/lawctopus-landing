@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { LawctopusWordmark } from './Logo'
+import logo from '../assets/lawctopus-logo.webp'
 
 const navLinks = [
   { href: '#curriculum',   label: 'Curriculum' },
@@ -53,8 +53,8 @@ export default function MainNav({ onDownload }) {
       }}>
         <div className="section-wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
           {/* Logo */}
-          <a href="#" style={{ textDecoration: 'none', flexShrink: 0 }}>
-            <LawctopusWordmark fontSize={20} />
+          <a href="#" style={{ textDecoration: 'none', flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+            <img src={logo} alt="Lawctopus" style={{ height: 38, width: 'auto', display: 'block' }} />
           </a>
 
           {/* Desktop nav links */}
