@@ -5,11 +5,12 @@ A modern, responsive landing page for **Lawctopus** ("The Home of Legal Careers"
 It's a single marketing web page that presents an online legal-careers course — explaining who it's for, what you'll learn, who teaches it, what it costs, and answering common questions — with a pop-up form to download the syllabus.
 
 > ### 🔗 Live website
+>
 > **https://lawctopus-landing-nine.vercel.app/**
 
 ---
 
-## What this project is (in plain English)
+## What this project is
 
 Think of it like a digital brochure for a course. When you open the link above, you scroll through one long page that tells the whole story of the course — from "here's why it's for you" at the top, all the way down to "here are answers to your questions" and "sign up now" at the bottom.
 
@@ -23,37 +24,37 @@ The page is fully **responsive** — it automatically rearranges itself to look 
 
 The page is built from small, reusable building blocks ("sections"), shown in this order:
 
-| Section | What it shows |
-|---|---|
-| **Navigation bar** | The Lawctopus logo and menu links that stick to the top as you scroll |
-| **Hero** | The big headline, intro, and main call-to-action |
-| **Social proof bar** | A scrolling strip of recognisable names/brands for trust |
-| **Who it's for** | The kinds of people the course is aimed at |
-| **Outcomes** | What you'll be able to do after finishing |
-| **Curriculum** | What the course covers, module by module |
-| **Faculty** | The instructors, with photos |
-| **Testimonials** | Quotes from past students |
-| **Pricing** | The price and what's included |
-| **Bonuses** | Extra perks (AI tools, career support, networking) |
-| **Guarantee** | The 100% money-back guarantee and how to claim it |
-| **FAQ** | Answers to common questions |
-| **Final call-to-action** | One last nudge to sign up |
-| **Footer** | Logo, social links, and site links |
-| **Syllabus pop-up** | A form (appears when you click "Download Syllabus") |
+| Section                  | What it shows                                                         |
+| ------------------------ | --------------------------------------------------------------------- |
+| **Navigation bar**       | The Lawctopus logo and menu links that stick to the top as you scroll |
+| **Hero**                 | The big headline, intro, and main call-to-action                      |
+| **Social proof bar**     | A scrolling strip of recognisable names/brands for trust              |
+| **Who it's for**         | The kinds of people the course is aimed at                            |
+| **Outcomes**             | What you'll be able to do after finishing                             |
+| **Curriculum**           | What the course covers, module by module                              |
+| **Faculty**              | The instructors, with photos                                          |
+| **Testimonials**         | Quotes from past students                                             |
+| **Pricing**              | The price and what's included                                         |
+| **Bonuses**              | Extra perks (AI tools, career support, networking)                    |
+| **Guarantee**            | The 100% money-back guarantee and how to claim it                     |
+| **FAQ**                  | Answers to common questions                                           |
+| **Final call-to-action** | One last nudge to sign up                                             |
+| **Footer**               | Logo, social links, and site links                                    |
+| **Syllabus pop-up**      | A form (appears when you click "Download Syllabus")                   |
 
 ---
 
 ## Tech stack
 
-| Tool | Why it's used |
-|---|---|
-| **React 19** | Builds the page out of reusable components |
-| **Vite 8** | Runs the dev server and bundles the site for production (very fast) |
-| **Tailwind CSS 4** | Styling utilities |
-| **Formspree** | Receives the syllabus form submissions by email (no backend needed) |
-| **lucide-react** | Clean line icons |
-| **Oxlint** | Checks the code for common mistakes |
-| **Vercel** | Hosts the live website and auto-deploys on every update |
+| Tool               | Why it's used                                                       |
+| ------------------ | ------------------------------------------------------------------- |
+| **React 19**       | Builds the page out of reusable components                          |
+| **Vite 8**         | Runs the dev server and bundles the site for production (very fast) |
+| **Tailwind CSS 4** | Styling utilities                                                   |
+| **Formspree**      | Receives the syllabus form submissions by email (no backend needed) |
+| **lucide-react**   | Clean line icons                                                    |
+| **Oxlint**         | Checks the code for common mistakes                                 |
+| **Vercel**         | Hosts the live website and auto-deploys on every update             |
 
 A nice detail: every colour in the site is defined in **one file** — [`src/theme.js`](src/theme.js). Change a value there and it updates everywhere across the site.
 
@@ -87,6 +88,7 @@ lawctopus-landing/
 You only need this if you want to open the project locally (the live link above already works for everyone).
 
 ### Prerequisites
+
 - **Node.js 20.19+ or 22.x** (this project is pinned to Node 22). Download from [nodejs.org](https://nodejs.org/).
 
 ### Steps
